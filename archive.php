@@ -43,4 +43,6 @@
 <h2>No posts to display</h2>	
 <?php endif; ?>
 
+test
+
 <?php get_footer(); ?>
