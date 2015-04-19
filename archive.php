@@ -43,6 +43,4 @@
 <h2>No posts to display</h2>	
 <?php endif; ?>
 
-<div>new git test</div>
-
 <?php get_footer(); ?>
