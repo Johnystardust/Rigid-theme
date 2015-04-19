@@ -43,6 +43,4 @@
 <h2>No posts to display</h2>	
 <?php endif; ?>
 
-mijn naam is tim van der Slik
-
 <?php get_footer(); ?>
