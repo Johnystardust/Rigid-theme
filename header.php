@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="<?php echo site_url(); ?>">Home</a></li>
-                    <li><a href="<?php echo get_page_link(46)?>">Work</a></li>
+                    <li><a href="<?php echo get_page_link(6)?>">Work</a></li>
                     <li><a href="#">Diensten</a></li>
                     <li><a href="#">Offerte</a></li>
                     <li><a href="#">Contact</a></li>
