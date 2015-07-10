@@ -51,14 +51,17 @@ function work_labels_meta_cb(){
     // Nonce needed to verify where the data originated from
     echo '<input type="hidden" name="labels_nonce" value="'.wp_create_nonce(plugin_basename(__FILE__)).'">';
 
+
+
     // Get the default_labels
     $options = get_option('tvds_theme_work_options');
     $default_labels = $options['default_labels'];
-//    print_r($default_labels);
+    print_r($default_labels);
+    echo '<br>';
 
     // Get the post meta
     $clicked_labels = get_post_meta($post->ID, '_labels', true);
-//    print_r($clicked_labels);
+    print_r($clicked_labels);
 
     ?>
     <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table" xmlns="http://www.w3.org/1999/html">
@@ -73,10 +76,11 @@ function work_labels_meta_cb(){
                 }
             }
         } else {
-            echo '<p>We have found no labels please select one or more.';
+            echo '<p>We have found no labels please select one or more.</p>';
+            foreach($default_labels as $label){
+                echo '<br><label><input type="checkbox" name="_labels[] value="'.$label.'">'.$label.'</label>';
+            }
         }
-
-
         ?>
         </tbody>
     </table>

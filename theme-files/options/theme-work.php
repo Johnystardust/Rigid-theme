@@ -1,5 +1,8 @@
 <?php
 
+/**
+ *
+ */
 function tvds_work_display(){
     ?>
     <!-- Create a header in the default WordPress 'wrap' container -->
@@ -23,6 +26,9 @@ function tvds_work_display(){
 
 /*
  * WORK OPTIONS
+ */
+/**
+ *
  */
 function tvds_init_work_options(){
     if(false == get_option('tvds_theme_work_options')){
@@ -69,6 +75,11 @@ function tvds_init_work_options(){
 add_action('admin_init', 'tvds_init_work_options');
 
 // THE FIELDS CALLBACK
+
+/**
+ * Toggle work header
+ * @param $args
+ */
 function tvds_toggle_work_header_cb($args){
     // First, we read the options collection
     $options = get_option('tvds_theme_work_options');
@@ -83,6 +94,9 @@ function tvds_toggle_work_header_cb($args){
     echo $html;
 }
 
+/**
+ * Add the labels you want to select in the work post
+ */
 function tvds_add_labels_cb(){
     // First, we read the options collection
     $options = get_option('tvds_theme_work_options');

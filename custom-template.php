@@ -45,6 +45,7 @@ get_header(); ?>
             <!-- labels -->
             <?php
                 $labels = get_post_meta($post->ID, "_labels", true);
+                print_r($labels);
                 if(!empty($labels)){
                     echo '<br>';
                     foreach($labels as $label){
