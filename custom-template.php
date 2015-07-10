@@ -23,46 +23,44 @@ get_header(); ?>
     }
 ?>
 
-<div class="container-fluid projects-work">
+<div class="container-fluid work-projects no-padding">
     <?php
-    $i = 1;
-    $class = '';
-    $args = array( 'post_type' => 'work', 'posts_per_page' => 10 );
+    $args = array( 'post_type' => 'work' );
     $the_query = new WP_Query($args);
-    while($the_query->have_posts() ) : $the_query->the_post();
-    ?>
-    <?php $i%2==0 ? $class = 'even' : $class = 'odd' ?>
 
-    <div class="row" id="<?php echo 'row'.$i; ?>">
-        <div class="col-md-7 image-work animated <?php if($class == 'odd'){echo 'col-md-push-5 bounceInRight';}else{echo 'bounceInLeft';} ?> text-center">
-            <img src="<?php echo get_stylesheet_directory_uri().'/images/Responsive-show.png' ?>" width="100%"/>
-        </div>
+    while($the_query->have_posts() ) : $the_query->the_post();?>
 
-        <div class="col-md-4 info-work animated fadeInUp <?php if($class == 'odd'){echo 'col-md-pull-7';}else{echo 'col-md-offset-1';} ?>">
-            <!-- title -->
-            <h3 class="no-margin"><?php the_title(); ?></h3>
+        <a href="<?php echo get_permalink() ?>">
+            <div class="col-md-3 project no-padding">
 
-            <!-- labels -->
-            <?php
-                $labels = get_post_meta($post->ID, "_labels", true);
-                print_r($labels);
-                if(!empty($labels)){
-                    echo '<br>';
-                    foreach($labels as $label){
-                        echo '<span class="label label-primary">'.$label.'</span>';
-                    }
+                <!-- post thumb-->
+                <div class="work-thumb">
+                <?php
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail();
                 }
-            ?>
+                ?>
+                </div>
 
-            <!-- content -->
-            <div class="text-work">
-                <p><?php echo wp_trim_words( get_the_content(), 75);  ?></p>
+                <!-- thumb overlay -->
+                <div class="work-thumb-overlay">
+                    <div style="display: table; height: 100%; width: 100%">
+                    <div style="display: table-cell; vertical-align: middle">
+
+                        <h3><?php echo the_title(); ?></h3>
+                        <hr/>
+                        <?php
+                        $category = get_the_category();
+                        ?>
+                        <h4><?php echo $category[0]->cat_name; ?></h4>
+
+                    </div>
+                    </div>
+
+                </div>
             </div>
-            <!-- permalink -->
-            <a class="btn btn-primary" href="<?php the_permalink(); ?>">Bekijk het project</a>
-        </div>
-    </div>
-    <?php $i++; ?>
+        </a>
+
     <?php endwhile; wp_reset_postdata(); ?>
 </div>
 

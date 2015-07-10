@@ -17,7 +17,7 @@ function add_my_custom_scripts(){
     wp_register_script('my_waypointsjs' ,get_stylesheet_directory_uri().'/js/waypoints.js', false);
 
     // register for work
-    wp_register_script('my_work_waypoints' ,get_stylesheet_directory_uri().'/js/work-waypoints.js', false);
+    wp_register_script('my_work_waypoints' ,get_stylesheet_directory_uri().'/js/work-template-js.js', false);
 
     // enqueue
     wp_enqueue_script('my_jquery');

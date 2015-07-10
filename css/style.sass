@@ -439,20 +439,26 @@ footer
   min-height: 500px
   margin-top: 50px
   color: white
-.projects-work
-  .row
-    padding-top: 100px
-    padding-left: 100px
-    padding-right: 100px
-    margin-bottom: 100px
-    border-top: 2px #DDD solid
-    min-height: 536px
-  .text-work
-    padding: 20px 0
-    text-align: justify
-  .image-work
-    margin-top: 60px
-    position: relative
+.work-projects
+  margin-top: 50px
+
+  .work-thumb
+    img
+      width: 100%
+      height: auto
+  .work-thumb-overlay
+    position: absolute
+    width: 90%
+    height: 90%
+    top: 5%
+    left: 5%
+    background-color: rgba(255, 255, 255, 0.7)
+    text-align: center
+    color: $blue
+    hr
+      width: 60%
+      border-top: 1px solid $blue
+
 
 
 //  Media Responsive
@@ -488,11 +494,6 @@ footer
   .overlay-maps
     height: 501px
 
-  .projects-work
-    .row
-      padding: 0 10px
-    .info-work
-      margin-top: 50px
 
 @media screen and (min-width: 768px)
   .work
@@ -524,12 +525,6 @@ footer
   .overlay-maps
     height: 501px
 
-  .projects-work
-    .row
-      padding: 0 10px
-    .info-work
-      margin-top: 50px
-
 @media screen and (max-width: 860px)
   .span-wrapper
     font-size: 1.8em !important
@@ -554,12 +549,6 @@ footer
       width: 100%
       margin: 0
 
-  // work template
-  .projects-work
-    .row
-      padding: 100px 100px
-    .info-work
-      margin-top: 50px
 
 @media screen and (max-width: 992px)
   .form-contact

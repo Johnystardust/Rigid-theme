@@ -429,19 +429,23 @@ footer {
   margin-top: 50px;
   color: white; }
 
-.projects-work .row {
-  padding-top: 100px;
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-bottom: 100px;
-  border-top: 2px #DDD solid;
-  min-height: 536px; }
-.projects-work .text-work {
-  padding: 20px 0;
-  text-align: justify; }
-.projects-work .image-work {
-  margin-top: 60px;
-  position: relative; }
+.work-projects {
+  margin-top: 50px; }
+  .work-projects .work-thumb img {
+    width: 100%;
+    height: auto; }
+  .work-projects .work-thumb-overlay {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    color: #337ab7; }
+    .work-projects .work-thumb-overlay hr {
+      width: 60%;
+      border-top: 1px solid #337ab7; }
 
 @media screen and (max-width: 768px) {
   .work {
@@ -471,12 +475,7 @@ footer {
     margin: 0; }
 
   .overlay-maps {
-    height: 501px; }
-
-  .projects-work .row {
-    padding: 0 10px; }
-  .projects-work .info-work {
-    margin-top: 50px; } }
+    height: 501px; } }
 @media screen and (min-width: 768px) {
   .work {
     position: relative;
@@ -505,12 +504,7 @@ footer {
     margin: 0; }
 
   .overlay-maps {
-    height: 501px; }
-
-  .projects-work .row {
-    padding: 0 10px; }
-  .projects-work .info-work {
-    margin-top: 50px; } }
+    height: 501px; } }
 @media screen and (max-width: 860px) {
   .span-wrapper {
     font-size: 1.8em !important; }
@@ -532,12 +526,7 @@ footer {
 
   .pricing .price {
     width: 100%;
-    margin: 0; }
-
-  .projects-work .row {
-    padding: 100px 100px; }
-  .projects-work .info-work {
-    margin-top: 50px; } }
+    margin: 0; } }
 @media screen and (max-width: 992px) {
   .form-contact {
     width: 100%; } }
