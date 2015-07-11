@@ -128,8 +128,8 @@ function work_header_img_meta_cb(){
                 <img id="header-image" src="<?php echo $image_src ?>" style="max-width:100%;" />
                 <input type="hidden" name="upload_header_image_id" id="upload_header_image_id" value="<?php echo $image_id; ?>" />
                 <p>
-                    <a title="<?php esc_attr_e( 'Set Header image' ) ?>" href="#" id="set-header-image"><?php _e( 'Set Header image' ) ?></a>
-                    <a title="<?php esc_attr_e( 'Remove Header image' ) ?>" href="#" id="remove-header-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove Header image' ) ?></a>
+                    <a class="button" title="<?php esc_attr_e( 'Set Header image' ) ?>" href="#" id="set-header-image"><?php _e( 'Set Header image' ) ?></a>
+                    <a class="button" title="<?php esc_attr_e( 'Remove Header image' ) ?>" href="#" id="remove-header-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove Header image' ) ?></a>
                 </p>
             </td>
         </tr>
@@ -199,63 +199,76 @@ function work_big_img_meta_cb(){
     $image_src = wp_get_attachment_url( $image_id );
 
     ?>
-    <img id="big-image" src="<?php echo $image_src ?>" style="max-width:100%;" />
-    <input type="hidden" name="upload_big_image_id" id="upload_big_image_id" value="<?php echo $image_id; ?>" />
-    <p>
-        <a title="<?php esc_attr_e( 'Set Big image' ) ?>" href="#" id="set-big-image"><?php _e( 'Set Big image' ) ?></a>
-        <a title="<?php esc_attr_e( 'Remove Big image' ) ?>" href="#" id="remove-big-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove Big image' ) ?></a>
-    </p>
+    <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
+        <tbody>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
 
-            // save the send_to_editor handler function
-            window.send_to_editor_default = window.send_to_editor;
+        <tr class="form-field">
+            <th valign="top" scope="row">
+                <label for="big-image">Big Image</label>
+            </th>
+            <td>
+                <img id="big-image" src="<?php echo $image_src ?>" style="max-width:100%;" />
+                <input type="hidden" name="upload_big_image_id" id="upload_big_image_id" value="<?php echo $image_id; ?>" />
+                <p>
+                    <a class="button" title="<?php esc_attr_e( 'Set Big image' ) ?>" href="#" id="set-big-image"><?php _e( 'Set Big image' ) ?></a>
+                    <a class="button" title="<?php esc_attr_e( 'Remove Big image' ) ?>" href="#" id="remove-big-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove Big image' ) ?></a>
+                </p>
+            </td>
+        </tr>
 
-            $('#set-big-image').click(function(){
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
 
-                // replace the default send_to_editor handler function with our own
-                window.send_to_editor = window.attach_image;
-                tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
+                // save the send_to_editor handler function
+                window.send_to_editor_default = window.send_to_editor;
 
-                return false;
+                $('#set-big-image').click(function(){
+
+                    // replace the default send_to_editor handler function with our own
+                    window.send_to_editor = window.attach_image;
+                    tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
+
+                    return false;
+                });
+
+                $('#remove-big-image').click(function() {
+
+                    $('#upload_big_image_id').val('');
+                    $('img').attr('src', '');
+                    $(this).hide();
+
+                    return false;
+                });
+
+                // handler function which is invoked after the user selects an image from the gallery popup.
+                // this function displays the image and sets the id so it can be persisted to the post meta
+                window.attach_image = function(html) {
+
+                    // turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
+                    $('body').append('<div id="temp_image">' + html + '</div>');
+
+                    var img = $('#temp_image').find('img');
+
+                    imgurl   = img.attr('src');
+                    imgclass = img.attr('class');
+                    imgid    = parseInt(imgclass.replace(/\D/g, ''), 10);
+
+                    $('#upload_big_image_id').val(imgid);
+                    $('#remove-big-image').show();
+
+                    $('img#big-image').attr('src', imgurl);
+                    try{tb_remove();}catch(e){};
+                    $('#temp_image').remove();
+
+                    // restore the send_to_editor handler function
+                    window.send_to_editor = window.send_to_editor_default;
+                }
+
             });
-
-            $('#remove-big-image').click(function() {
-
-                $('#upload_big_image_id').val('');
-                $('img').attr('src', '');
-                $(this).hide();
-
-                return false;
-            });
-
-            // handler function which is invoked after the user selects an image from the gallery popup.
-            // this function displays the image and sets the id so it can be persisted to the post meta
-            window.attach_image = function(html) {
-
-                // turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
-                $('body').append('<div id="temp_image">' + html + '</div>');
-
-                var img = $('#temp_image').find('img');
-
-                imgurl   = img.attr('src');
-                imgclass = img.attr('class');
-                imgid    = parseInt(imgclass.replace(/\D/g, ''), 10);
-
-                $('#upload_big_image_id').val(imgid);
-                $('#remove-big-image').show();
-
-                $('img#big-image').attr('src', imgurl);
-                try{tb_remove();}catch(e){};
-                $('#temp_image').remove();
-
-                // restore the send_to_editor handler function
-                window.send_to_editor = window.send_to_editor_default;
-            }
-
-        });
-    </script>
+        </script>
+        </tbody>
+    </table>
     <?php
 }
 

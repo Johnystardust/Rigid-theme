@@ -458,6 +458,10 @@ footer {
 .work-project-single {
   margin-top: -150px; }
 
+.work-project-label {
+  background-color: #474747;
+  padding-top: 50%; }
+
 @media screen and (max-width: 768px) {
   .work {
     position: relative;

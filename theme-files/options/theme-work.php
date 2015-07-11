@@ -102,6 +102,9 @@ function tvds_add_labels_cb(){
     $options = get_option('tvds_theme_work_options');
     $default_labels = $options['default_labels'];
     print_r($default_labels);
+
+    $icon_names = $options['icon_labels'];
+    print_r($icon_names);
     ?>
 
     <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
@@ -115,6 +118,7 @@ function tvds_add_labels_cb(){
             <tr class="form-field">
                 <td>
                     <input type="text" name="tvds_theme_work_options[default_labels][]" value="<?php echo $label; ?>"><br>
+<!--                    <input type="text" name="tvds_theme_work_options[icon_labels][]" value="--><?php //echo $label; ?><!--"><br>-->
                 </td>
                 <td>
                     <input type="button" class="remove-label button button-cancel" value="Remove Label">

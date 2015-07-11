@@ -24,7 +24,7 @@ if($work_options['show_work_header']){
                 </div>
                 <div class="col-md-3">
                     <h3>Bekijk het resultaat</h3>
-                    <a id="header-link" href="<?php echo get_post_meta($post->ID, '_header_link', true); ?>"><?php echo get_post_meta($post->ID, '_header_link', true); ?></a>
+                    <a id="header-link" target="_blank" href="<?php echo get_post_meta($post->ID, '_header_link', true); ?>"><?php echo get_post_meta($post->ID, '_header_link', true); ?></a>
                 </div>
             </div>
         </div>
@@ -45,6 +45,26 @@ if($work_options['show_work_header']){
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <?php the_content(); ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+            <?php
+            $labels = get_post_meta($post->ID, "_labels", true);
+//            print_r($labels);
+
+            if(!empty($labels)){
+                foreach($labels as $label){
+                    ?>
+                    <div class="col-md-6 work-project-label">
+                        <span><?php echo $label ?></span>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
             </div>
         </div>
 
