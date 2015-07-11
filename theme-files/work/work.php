@@ -40,7 +40,7 @@ function create_work_post_type() {
  */
 function add_meta_boxes(){
     add_meta_box('work_labels', 'Labels', 'work_labels_meta_cb', 'work', 'side', 'default');
-    add_meta_box('work_header_img', 'Header Image', 'work_header_img_meta_cb', 'work', 'normal', 'default');
+    add_meta_box('work_header_img', 'Header', 'work_header_img_meta_cb', 'work', 'normal', 'default');
     add_meta_box('work_big_img', 'Big Image', 'work_big_img_meta_cb', 'work', 'normal', 'default');
 }
 
@@ -49,7 +49,7 @@ function add_meta_boxes(){
  *
  * Here are the callbacks for the meta boxes
  * 1. Labels
- * 2. Header Image
+ * 2. Header
  * 3. Big Image
  */
 
@@ -98,69 +98,94 @@ function work_labels_meta_cb(){
 function work_header_img_meta_cb(){
     global $post;
 
-    $image_src = '';
-
-    $image_id = get_post_meta( $post->ID, '_header_img', true );
-    $image_src = wp_get_attachment_url( $image_id );
-
     ?>
-    <img id="header-image" src="<?php echo $image_src ?>" style="max-width:100%;" />
-    <input type="hidden" name="upload_header_image_id" id="upload_header_image_id" value="<?php echo $image_id; ?>" />
-    <p>
-        <a title="<?php esc_attr_e( 'Set Header image' ) ?>" href="#" id="set-header-image"><?php _e( 'Set Header image' ) ?></a>
-        <a title="<?php esc_attr_e( 'Remove Header image' ) ?>" href="#" id="remove-header-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove Header image' ) ?></a>
-    </p>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
+    <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
+        <tbody>
+        <tr class="form-field">
+            <th valign="top" scope="row">
+                <label for="header_link">Header Link</label>
+            </th>
+            <td>
+                <input id="header_link" name="_header_link" type="text" style="width: 95%" value="<?php echo get_post_meta($post->ID, '_header_link', true); ?>" size="50"
+                       class="code" placeholder="http://www."/>
+            </td>
+        </tr>
 
-            // save the send_to_editor handler function
-            window.send_to_editor_default = window.send_to_editor;
 
-            $('#set-header-image').click(function(){
+        <?php
 
-                // replace the default send_to_editor handler function with our own
-                window.send_to_editor = window.attach_header_image;
-                tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
+        $image_src  = '';
+        $image_id   = get_post_meta( $post->ID, '_header_img', true );
+        $image_src  = wp_get_attachment_url( $image_id );
 
-                return false;
+        ?>
+        <tr class="form-field">
+            <th valign="top" scope="row">
+                <label for="header-image">Header Image</label>
+            </th>
+            <td>
+                <img id="header-image" src="<?php echo $image_src ?>" style="max-width:100%;" />
+                <input type="hidden" name="upload_header_image_id" id="upload_header_image_id" value="<?php echo $image_id; ?>" />
+                <p>
+                    <a title="<?php esc_attr_e( 'Set Header image' ) ?>" href="#" id="set-header-image"><?php _e( 'Set Header image' ) ?></a>
+                    <a title="<?php esc_attr_e( 'Remove Header image' ) ?>" href="#" id="remove-header-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove Header image' ) ?></a>
+                </p>
+            </td>
+        </tr>
+
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+
+                // save the send_to_editor handler function
+                window.send_to_editor_default = window.send_to_editor;
+
+                $('#set-header-image').click(function(){
+
+                    // replace the default send_to_editor handler function with our own
+                    window.send_to_editor = window.attach_header_image;
+                    tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
+
+                    return false;
+                });
+
+                $('#remove-header-image').click(function() {
+
+                    $('#upload_header_image_id').val('');
+                    $('img').attr('src', '');
+                    $(this).hide();
+
+                    return false;
+                });
+
+                // handler function which is invoked after the user selects an image from the gallery popup.
+                // this function displays the image and sets the id so it can be persisted to the post meta
+                window.attach_header_image = function(html) {
+
+                    // turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
+                    $('body').append('<div id="temp_header_image">' + html + '</div>');
+
+                    var img = $('#temp_header_image').find('img');
+
+                    imgurl   = img.attr('src');
+                    imgclass = img.attr('class');
+                    imgid    = parseInt(imgclass.replace(/\D/g, ''), 10);
+
+                    $('#upload_header_image_id').val(imgid);
+                    $('#remove-header-image').show();
+
+                    $('img#header-image').attr('src', imgurl);
+                    try{tb_remove();}catch(e){};
+                    $('#temp_header_image').remove();
+
+                    // restore the send_to_editor handler function
+                    window.send_to_editor = window.send_to_editor_default;
+                }
+
             });
-
-            $('#remove-header-image').click(function() {
-
-                $('#upload_header_image_id').val('');
-                $('img').attr('src', '');
-                $(this).hide();
-
-                return false;
-            });
-
-            // handler function which is invoked after the user selects an image from the gallery popup.
-            // this function displays the image and sets the id so it can be persisted to the post meta
-            window.attach_header_image = function(html) {
-
-                // turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
-                $('body').append('<div id="temp_header_image">' + html + '</div>');
-
-                var img = $('#temp_header_image').find('img');
-
-                imgurl   = img.attr('src');
-                imgclass = img.attr('class');
-                imgid    = parseInt(imgclass.replace(/\D/g, ''), 10);
-
-                $('#upload_header_image_id').val(imgid);
-                $('#remove-header-image').show();
-
-                $('img#header-image').attr('src', imgurl);
-                try{tb_remove();}catch(e){};
-                $('#temp_header_image').remove();
-
-                // restore the send_to_editor handler function
-                window.send_to_editor = window.send_to_editor_default;
-            }
-
-        });
-    </script>
+        </script>
+        </tbody>
+    </table>
     <?php
 }
 
@@ -251,6 +276,9 @@ function save_work_labels_meta($post_id){
     // Checks for input and sanitizes/saves if needed
     if(isset($_POST[ '_labels' ])){
         update_post_meta($post_id, '_labels', $_POST['_labels']);
+    }
+    if(isset($_POST[ '_header_link' ])){
+        update_post_meta($post_id, '_header_link', $_POST['_header_link']);
     }
     if(isset($_POST[ 'upload_header_image_id' ])){
         update_post_meta($post_id, '_header_img', $_POST['upload_header_image_id']);

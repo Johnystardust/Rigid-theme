@@ -440,13 +440,20 @@ footer {
       border-top: 1px solid #337ab7; }
 
 .intro-work-project-single {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-bottom: 20px #474747 solid;
-  max-height: 500px;
+  min-height: 500px;
   margin-top: 50px;
   overflow: hidden;
   color: white; }
+
+.intro-work-project-header {
+  margin-top: 50px; }
 
 .work-project-single {
   margin-top: -150px; }
