@@ -420,16 +420,8 @@ footer {
   width: 0;
   position: relative; }
 
-.intro-work {
-  background-image: url("../images/rigid-work.jpg");
-  background-attachment: fixed;
-  background-position: center bottom;
-  border-bottom: 20px #474747 solid;
-  min-height: 500px;
-  margin-top: 50px;
-  color: white; }
-
 .work-projects {
+  background-color: #373737;
   margin-top: 50px; }
   .work-projects .work-thumb img {
     width: 100%;
@@ -446,6 +438,18 @@ footer {
     .work-projects .work-thumb-overlay hr {
       width: 60%;
       border-top: 1px solid #337ab7; }
+
+.intro-work-project-single {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-bottom: 20px #474747 solid;
+  max-height: 500px;
+  margin-top: 50px;
+  overflow: hidden;
+  color: white; }
+
+.work-project-single {
+  margin-top: -150px; }
 
 @media screen and (max-width: 768px) {
   .work {

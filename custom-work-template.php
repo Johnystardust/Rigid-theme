@@ -5,24 +5,6 @@ Template Name: Work Template
 
 get_header(); ?>
 
-<?php
-    global $post;
-
-    $work_options = get_option('tvds_theme_work_options');
-    if($work_options['show_work_header']){
-        ?>
-        <div class="container-fluid intro-work">
-            <div class="container">
-                <div class="row text-center">
-                    <h1><?php the_title(); ?></h1>
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>
-        <?php
-    }
-?>
-
 <div class="container-fluid work-projects no-padding">
     <?php
     $args = array( 'post_type' => 'work' );

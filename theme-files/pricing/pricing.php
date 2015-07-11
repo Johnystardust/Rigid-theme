@@ -99,7 +99,7 @@ function tvds_pricing_services_meta_cb(){
     <?php
 }
 
-// Pricing Price
+//2. Pricing Price
 function tvds_pricing_price_meta_cb(){
     global $post;
     ?>
