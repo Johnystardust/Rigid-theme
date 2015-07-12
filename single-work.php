@@ -59,7 +59,8 @@ if($work_options['show_work_header']){
                 foreach($labels as $label){
                     ?>
                     <div class="col-md-6 work-project-label">
-                        <span><?php echo $label ?></span>
+                        <span><?php echo $label['name']; ?></span>
+                        <i class="<?php echo $label['icon'] ?>"></i>
                     </div>
                     <?php
                 }

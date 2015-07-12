@@ -2,7 +2,7 @@
 
 add_action('admin_init', 'add_pricing_custom_scripts');
 function add_pricing_custom_scripts(){
-    wp_register_script('pricingjs' ,get_stylesheet_directory_uri().'/js/pricingjs.js', false);
+    wp_register_script('pricingjs' ,get_stylesheet_directory_uri().'/js/theme-options.js', false);
     wp_enqueue_script('pricingjs');
 }
 

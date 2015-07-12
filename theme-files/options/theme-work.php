@@ -101,10 +101,8 @@ function tvds_add_labels_cb(){
     // First, we read the options collection
     $options = get_option('tvds_theme_work_options');
     $default_labels = $options['default_labels'];
-    print_r($default_labels);
 
-    $icon_names = $options['icon_labels'];
-    print_r($icon_names);
+    $i = 0;
     ?>
 
     <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
@@ -113,18 +111,20 @@ function tvds_add_labels_cb(){
             <td>Fill in all the labels that can be chosen to be displayed in the projects</td>
         </tr>
         <?php
-        foreach($default_labels as $label){
+        foreach($default_labels as $label ){
+
             ?>
             <tr class="form-field">
                 <td>
-                    <input type="text" name="tvds_theme_work_options[default_labels][]" value="<?php echo $label; ?>"><br>
-<!--                    <input type="text" name="tvds_theme_work_options[icon_labels][]" value="--><?php //echo $label; ?><!--"><br>-->
+                    <input type="text" name="tvds_theme_work_options[default_labels][<?php echo $i; ?>][name]" value="<?php echo $label['name']; ?>" placeholder="Label name"><br>
+                    <input type="text" name="tvds_theme_work_options[default_labels][<?php echo $i; ?>][icon]" value="<?php echo $label['icon']; ?>" placeholder="Icon name"><br>
                 </td>
                 <td>
                     <input type="button" class="remove-label button button-cancel" value="Remove Label">
                 </td>
             </tr>
             <?php
+            $i ++;
         }
         ?>
         </tbody>

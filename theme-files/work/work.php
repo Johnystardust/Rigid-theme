@@ -63,29 +63,44 @@ function work_labels_meta_cb(){
     // Get the default_labels
     $options = get_option('tvds_theme_work_options');
     $default_labels = $options['default_labels'];
-    print_r($default_labels);
-    echo '<br>';
 
     // Get the post meta
     $clicked_labels = get_post_meta($post->ID, '_labels', true);
+
     print_r($clicked_labels);
+
+    $i = 0;
 
     ?>
     <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table" xmlns="http://www.w3.org/1999/html">
         <tbody>
         <?php
+
+        // Check if $clicked_labels is array
         if(is_array($clicked_labels)){
             foreach($default_labels as $label){
+                // Check if the $label is in the $clicked_labels
                 if(in_array($label, $clicked_labels)){
-                    echo '<br><label><input type="checkbox" name="_labels[]" value="'.$label.'" checked>'.$label.'</label>';
+                    ?>
+                    <br><label><input type="checkbox" onclick="var input = document.getElementById('checkbox<?php echo $i; ?>');" name="_labels[<?php echo $i; ?>][name]" value="<?php echo $label['name']; ?>" checked><?php echo $label['name']; ?>
+                    <input id="checkbox<?php echo $i; ?>" type="hidden" name="_labels[<?php echo $i; ?>][icon]" value="<?php echo $label['icon']; ?>"/></label>
+                    <?php
                 } else {
-                    echo '<br><label><input type="checkbox" name="_labels[]" value="'.$label.'">'.$label.'</label>';
+                    ?>
+                    <br><label><input type="checkbox" onclick="var input = document.getElementById('checkbox<?php echo $i; ?>'); if(this.checked){ input.disabled = false;} else{input.disabled = true;}" name="_labels[<?php echo $i; ?>][name]" value="<?php echo $label['name']; ?>"><?php echo $label['name']; ?>
+                    <input disabled="disabled" id="checkbox<?php echo $i; ?>" type="hidden" name="_labels[<?php echo $i; ?>][icon]" value="<?php echo $label['icon']; ?>"/></label>
+                    <?php
                 }
+                $i ++;
             }
         } else {
             echo '<p>We have found no labels please select one or more.</p>';
             foreach($default_labels as $label){
-                echo '<br><label><input type="checkbox" name="_labels[] value="'.$label.'">'.$label.'</label>';
+                ?>
+                <br><label><input type="checkbox" onclick="document.getElementById('checkbox<?php echo $i; ?>').value = <?php echo $label['icon']; ?>;" name="_labels[<?php echo $i; ?>][name]" value="<?php echo $label['name']; ?>"><?php echo $label['name']; ?>
+                <input id="checkbox<?php echo $i; ?>" type="hidden" name="_labels[<?php echo $i; ?>][icon]" value=""/></label>
+                <?php
+                $i ++;
             }
         }
         ?>

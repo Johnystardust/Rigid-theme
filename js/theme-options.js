@@ -21,7 +21,8 @@ jQuery(document).ready(function(){
         var count = $('#labels-can-add .form-field').length;
         var i = parseInt(count);
 
-        $('#labels-can-add').append('<tr class="form-field"><td><input type="text" name="tvds_theme_work_options[default_labels][]"></td>' +
+        $('#labels-can-add').append('<tr class="form-field"><td><input type="text" name="tvds_theme_work_options[default_labels][][name]">' +
+        '<input type="text" name="tvds_theme_work_options[default_labels][][icon]]"></td>' +
         '<td><input type="button" class="remove-label button button-cancel" value="Remove Label"></td></tr>');
     });
 
