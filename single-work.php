@@ -49,7 +49,7 @@ if($work_options['show_work_header']){
         </div>
 
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
 
             <?php
             $labels = get_post_meta($post->ID, "_labels", true);
@@ -58,9 +58,9 @@ if($work_options['show_work_header']){
             if(!empty($labels)){
                 foreach($labels as $label){
                     ?>
-                    <div class="col-md-6 work-project-label">
-                        <span><?php echo $label['name']; ?></span>
+                    <div class="col-md-3 work-project-label">
                         <i class="<?php echo $label['icon'] ?>"></i>
+                        <span><?php echo $label['name']; ?></span>
                     </div>
                     <?php
                 }
