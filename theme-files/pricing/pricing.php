@@ -27,7 +27,7 @@ function tvds_init_pricing_post_type(){
         'labels'                => $labels,
         'public'                => true,
         'menu_position'         => 8,
-        'supports'              => 'title',
+        'supports'              => array( 'title', 'editor'),
         'has_archive'           => false,
         'register_meta_box_cb'  => 'tvds_pricing_meta_box_cb'
     );

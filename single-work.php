@@ -4,9 +4,8 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
 
-<?php
 global $post;
 
 $work_options = get_option('tvds_theme_work_options');

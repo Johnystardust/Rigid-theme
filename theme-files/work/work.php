@@ -112,7 +112,6 @@ function work_labels_meta_cb(){
 //2. Header
 function work_header_img_meta_cb(){
     global $post;
-
     ?>
 
     <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
@@ -127,7 +126,6 @@ function work_header_img_meta_cb(){
             </td>
         </tr>
 
-
         <?php
 
         $image_src  = '';
@@ -135,6 +133,7 @@ function work_header_img_meta_cb(){
         $image_src  = wp_get_attachment_url( $image_id );
 
         ?>
+
         <tr class="form-field">
             <th valign="top" scope="row">
                 <label for="header-image">Header Image</label>
@@ -152,11 +151,11 @@ function work_header_img_meta_cb(){
         <script type="text/javascript">
             jQuery(document).ready(function($) {
 
-                // save the send_to_editor handler function
+                // Save the send_to_editor handler function
                 window.send_to_editor_default = window.send_to_editor;
 
+                // Set the image
                 $('#set-header-image').click(function(){
-
                     // replace the default send_to_editor handler function with our own
                     window.send_to_editor = window.attach_header_image;
                     tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
@@ -164,20 +163,21 @@ function work_header_img_meta_cb(){
                     return false;
                 });
 
+                // Remove the image
                 $('#remove-header-image').click(function() {
 
-                    $('#upload_header_image_id').val('');
-                    $('img').attr('src', '');
-                    $(this).hide();
+                    $('#upload_header_image_id').val('');           // clear the value of the upload ID
+                    $('#header-image').attr('src', '');             // clear the img attribute
+                    $(this).hide();                                 // Hide the remove header button
 
                     return false;
                 });
 
-                // handler function which is invoked after the user selects an image from the gallery popup.
-                // this function displays the image and sets the id so it can be persisted to the post meta
+                // Handler function which is invoked after the user selects an image from the gallery popup.
+                // This function displays the image and sets the id so it can be persisted to the post meta
                 window.attach_header_image = function(html) {
 
-                    // turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
+                    // Turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
                     $('body').append('<div id="temp_header_image">' + html + '</div>');
 
                     var img = $('#temp_header_image').find('img');
@@ -238,8 +238,8 @@ function work_big_img_meta_cb(){
                 // save the send_to_editor handler function
                 window.send_to_editor_default = window.send_to_editor;
 
+                // Set the image
                 $('#set-big-image').click(function(){
-
                     // replace the default send_to_editor handler function with our own
                     window.send_to_editor = window.attach_image;
                     tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
@@ -247,11 +247,12 @@ function work_big_img_meta_cb(){
                     return false;
                 });
 
+                // Remove the image
                 $('#remove-big-image').click(function() {
 
-                    $('#upload_big_image_id').val('');
-                    $('img').attr('src', '');
-                    $(this).hide();
+                    $('#upload_big_image_id').val('');              // Clear the value of the upload ID
+                    $('#big-image').attr('src', '');                // Clear the image attribute
+                    $(this).hide();                                 // Hide the remove button
 
                     return false;
                 });

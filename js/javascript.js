@@ -87,13 +87,13 @@ jQuery(document).ready(function(){
         var rand;                               // Random Quote Number
         var timer;                              // The Timer Var
         var quotes = [                          // Quotes Array
-            //'<span>“What separates design from art</span><span>is that <strong>design</strong> is meant to be <strong>functional</strong>.”</span>',
-            //'<span>“Intuitive <strong>design</strong> is how we give the user new superpowers.”</span>',
-            //'<span>“Websites <strong>promote</strong> you 24/7: No employee will do that.”</span>',
-            //'<span>“If you think math is hard try <strong>web design</strong>.”</span>',
-            //'<span>“A website without <strong>SEO</strong> is like a car with no gas.”</span>',
-            //'<span>“Great <strong>web design</strong> without functionality is like a sports car with no engine.”</span>',
-            //'<span>“Websites should look good from the <strong>inside</strong> and <strong>out</strong>.”</span>',
+            '<span>“What separates design from art</span><span>is that <strong>design</strong> is meant to be <strong>functional</strong>.”</span>',
+            '<span>“Intuitive <strong>design</strong> is how we give the user new superpowers.”</span>',
+            '<span>“Websites <strong>promote</strong> you 24/7: No employee will do that.”</span>',
+            '<span>“If you think math is hard try <strong>web design</strong>.”</span>',
+            '<span>“A website without <strong>SEO</strong> is like a car with no gas.”</span>',
+            '<span>“Great <strong>web design</strong> without functionality is like a sports car with no engine.”</span>',
+            '<span>“Websites should look good from the <strong>inside</strong> and <strong>out</strong>.”</span>',
             '<span>“Every child is an <strong>artist</strong>.</span><span class="clearfix"></span><span>The challenge is to remain an <strong>artist</strong> after you grow up.”</span>'
         ];
 

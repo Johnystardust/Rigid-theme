@@ -49,7 +49,7 @@
         <script>
             function initialize() {
                 var mapCanvas = document.getElementById('map-canvas');
-                var myLatLng = new google.maps.LatLng(51.836440, 5.849507);
+                var myLatLng = new google.maps.LatLng(51.9794907, 5.9095527,17);
                 var mapOptions = {
                     center: myLatLng,
                     zoom: 14,
@@ -58,18 +58,15 @@
                     disableDefaultUI:false
                 };
                 var map = new google.maps.Map(mapCanvas, mapOptions);
-
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
                     title: 'Rigid Webdesign',
                     animation: google.maps.Animation.DROP
                 });
-
                 var contentString = '<div id="content">' +
                     '<div class="siteNotice">' +
                     '</div>Rigid Webdesign</div>';
-
                 var infowindow = new google.maps.InfoWindow({
                     content: contentString
                 });

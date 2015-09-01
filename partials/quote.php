@@ -9,7 +9,8 @@
             </a>
         </div>
     </div>
-    <div class="time">
-
+    <div class="time-wrapper">
+        <div class="time"></div>
+        <div class="time-background"></div>
     </div>
 </div>
