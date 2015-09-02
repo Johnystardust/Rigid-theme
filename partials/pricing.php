@@ -9,7 +9,16 @@
             $services = $options['pricing'];
             $filtered = array_filter($services);
 
-            $args = array( 'post_type' => 'pricing', 'posts_per_page' => 4, 'meta_key' => '_pricing_price', 'order' => 'ASC', 'orderby' => 'meta_value_num' );
+            // Query Arguments
+            $args = array(
+                'post_type' => 'pricing',
+                'posts_per_page' => 4,
+                'orderby' => 'date',
+                'order' => 'DEC'
+            );
+
+
+
             $the_query = new WP_Query($args);
             while($the_query->have_posts()) : $the_query->the_post();
                 // Get the checked options
@@ -32,7 +41,7 @@
                             ?>
                         </div>
                         <div class="price-amount">
-                            <h2>€<?php echo get_post_meta($post->ID, '_pricing_price', true); ?>,-</h2>
+                            <h2>€ <?php echo get_post_meta($post->ID, '_pricing_price', true); ?>,-</h2>
                         </div>
                         <a href="<?php echo the_permalink(); ?>" class="btn btn-primary buy">Bekijk details</a>
                     </div>

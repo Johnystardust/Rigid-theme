@@ -21,7 +21,6 @@ jQuery(document).ready(function(){
         windowWidth = $(window).width();                    // Sets The Var Again For The Quote Timer Animation
         windowHeight = $(window).height();                  // Sets The Var Again For The Wrapper Height
 
-
         $('header').css('height', windowHeight);
     });
 
@@ -74,7 +73,7 @@ jQuery(document).ready(function(){
     // Vars
     var scrollTop     = $(window).scrollTop(),
         elementOffset = $(".intro").offset().top,
-        distance      = (elementOffset - scrollTop - 20);
+        distance      = (elementOffset - scrollTop);
 
     // Scroll down
     $(".scroll-down").find("a").click(function(){
@@ -90,7 +89,7 @@ jQuery(document).ready(function(){
             '<span>“What separates design from art</span><span>is that <strong>design</strong> is meant to be <strong>functional</strong>.”</span>',
             '<span>“Intuitive <strong>design</strong> is how we give the user new superpowers.”</span>',
             '<span>“Websites <strong>promote</strong> you 24/7: No employee will do that.”</span>',
-            '<span>“If you think math is hard try <strong>web design</strong>.”</span>',
+            '<span>“If you think math is hard try<strong> web design</strong>.”</span>',
             '<span>“A website without <strong>SEO</strong> is like a car with no gas.”</span>',
             '<span>“Great <strong>web design</strong> without functionality is like a sports car with no engine.”</span>',
             '<span>“Websites should look good from the <strong>inside</strong> and <strong>out</strong>.”</span>',

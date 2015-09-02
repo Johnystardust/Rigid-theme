@@ -8,7 +8,9 @@
     <title>Rigid - Webdesign</title>
 
     <!-- google -->
+    <!-- google analytics -->
     <meta name="google-site-verification" content="-pv11sqnPXQR0IXB5VCdJljytXtf1kLN4IGqoBCeHc8" />
+    <!-- fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
 
     <!-- wp enqueue scripts and styles -->

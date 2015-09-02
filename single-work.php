@@ -34,39 +34,43 @@ if($work_options['show_work_header']){
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-    <div class="container-fluid work-project-single">
+    <div class="container-fluid work-project-single no-padding">
         <div class="row">
             <div class="big-image col-md-8 col-md-offset-2 text-center">
                 <img src="<?php echo wp_get_attachment_url(get_post_meta($post->ID, '_big_img', true)); ?>" width="100%"/>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <?php the_content(); ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <?php the_content(); ?>
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
 
-            <?php
-            $labels = get_post_meta($post->ID, "_labels", true);
-//            print_r($labels);
-
-            if(!empty($labels)){
-                foreach($labels as $label){
-                    ?>
-                    <div class="col-md-3 work-project-label">
-                        <i class="<?php echo $label['icon'] ?>"></i>
-                        <span><?php echo $label['name']; ?></span>
-                    </div>
                     <?php
-                }
-            }
-            ?>
+                    $labels = get_post_meta($post->ID, "_labels", true);
+                    //            print_r($labels);
+
+                    if(!empty($labels)){
+                        foreach($labels as $label){
+                            ?>
+                            <div class="col-md-3 work-project-label">
+                                <i class="<?php echo $label['icon'] ?>"></i>
+                                <span><?php echo $label['name']; ?></span>
+                            </div>
+                        <?php
+                        }
+                    }
+                    ?>
+                </div>
             </div>
         </div>
+
+
 
     </div>
 <?php endwhile; ?>

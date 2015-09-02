@@ -19,10 +19,30 @@
             </div>
             <div class="right">
                 <ul class="social">
-                    <li><a href="<?php echo $display_option['linkedin'] ?>" target="_blank"><i class="icon-linkedin-circled"></i></a></li>
-                    <li><a href="<?php echo $display_option['facebook'] ?>" target="_blank"><i class="icon-facebook-circled"></i></a></li>
-                    <li><a href="<?php echo $display_option['google'] ?>" target="_blank"><i class="icon-gplus-circled"></i></a></li>
-                    <li><a href="<?php echo $display_option['twitter'] ?>" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                    <?php if(!empty($display_option['google'])){
+                        ?>
+                        <li><a href="<?php echo $display_option['google'] ?>" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                        <?php
+                    } ?>
+                    <?php if(!empty($display_option['linkedin'])){
+                        ?>
+                        <li><a href="<?php echo $display_option['linkedin'] ?>" target="_blank"><i class="icon-linkedin-circled"></i></a></li>
+                    <?php
+                    } ?>
+                    <?php if(!empty($display_option['facebook'])){
+                        ?>
+                        <li><a href="<?php echo $display_option['facebook'] ?>" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                    <?php
+                    } ?>
+                    <?php if(!empty($display_option['twitter'])){
+                        ?>
+                        <li><a href="<?php echo $display_option['twitter'] ?>" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                    <?php
+                    } ?>
+
+
+
+
                 </ul>
             </div>
         </div>

@@ -49,7 +49,7 @@ get_header(); ?>
 
                 <div class="col-md-8 col-md-offset-2">
                     <div class="price-amount">
-                        <h2>Prijs €<?php echo get_post_meta($post->ID, '_pricing_price', true); ?>,-</h2>
+                        <h2>Prijs € <?php echo get_post_meta($post->ID, '_pricing_price', true); ?></h2>
                     </div>
                     <a href="<?php echo the_permalink(); ?>" class="btn btn-primary buy">Bekijk details</a>
                 </div>

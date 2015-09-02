@@ -110,7 +110,7 @@ function tvds_pricing_price_meta_cb(){
                     <label for="price">Price</label>
                 </th>
                 <td>
-                    <input id="price" name="_pricing_price" type="number" style="width: 95%" value="<?php echo get_post_meta($post->ID, '_pricing_price', true); ?>" size="50"
+                    <input id="price" name="_pricing_price" type="text" style="width: 95%" value="<?php echo get_post_meta($post->ID, '_pricing_price', true); ?>" size="50"
                            class="code" placeholder="choose a price"/>
                 </td>
             </tr>
