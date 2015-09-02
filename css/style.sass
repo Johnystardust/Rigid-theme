@@ -170,9 +170,7 @@ footer
 
 //  Work
 .works
-  background-image: url("../images/rigid-work.jpg")
-  background-attachment: fixed
-  background-position: center
+  background: url("../images/rigid-work.jpg") fixed center
   border-bottom: solid #474747 20px
   border-top: solid #474747 20px
   color: $white
@@ -254,9 +252,7 @@ footer
 
 //  Pricing
 .pricing
-  background-image: url("../images/rigid-pricing.jpg")
-  background-attachment: fixed
-  background-position: center
+  background: url("../images/rigid-pricing.jpg") fixed center
   background-size: cover
   min-height: 617px
   border-bottom: solid #474747 20px
@@ -383,9 +379,7 @@ footer
 
 //  Quotes
 .quote
-  background-image: url("../images/rigid-pricing.jpg")
-  background-attachment: fixed
-  background-position: center 70%
+  background: url("../images/rigid-pricing.jpg") fixed center 70%
   background-size: cover
   border-top: solid #474747 20px
   min-height: 135px
@@ -438,7 +432,7 @@ footer
   width: 100%
   background-color: #7f7f7f
   position: absolute
-  top: 0px
+  top: 0
 
 //  Work Projects Template
 .work-projects
@@ -464,9 +458,7 @@ footer
 
 //  Work Project Single
 .intro-work-project-single
-  background-attachment: fixed
-  background-repeat: no-repeat
-  background-position: center bottom
+  background: no-repeat fixed center bottom
   background-size: cover
   padding-left: 0 !important
   padding-right: 0 !important
@@ -482,13 +474,35 @@ footer
 .work-project-label
   background-color: $grey-dark
   padding-top: 50%
-.work-project-label
-  i
-    //font-size: 200px
 
 // Pricing Template
 .pricing-template
   margin-top: 50px
+  color: #ffffff
+  h1
+    margin-top: 0
+    margin-bottom: 20px
+  h2
+    margin-top: 0
+    margin-bottom: 20px
+  .row
+    padding-top: 50px
+    padding-bottom: 50px
+  .bronze
+    background-color: #666666
+  .silver
+    background-color: #777777
+  .gold
+    background-color: #888888
+  .diamond
+    background-color: #999999
+  .services-list-horizontal
+    .service-list-horizontal
+      text-align: center
+    i
+      font-size: 50px
+  .exclude
+    color: #474747
 
 // Pricing Single
 .pricing-single
@@ -595,3 +609,24 @@ footer
     width: 100%
   .span-wrapper
     font-size: 3em !important
+
+
+
+// BOOTSTRAP 7 EQUAL COLLS
+@media (min-width: 768px)
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1
+    width: 100%
+
+@media (min-width: 992px)
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1
+    width: 14.285714285714285714285714285714%
+
+@media (min-width: 1200px)
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1
+    width: 14.285714285714285714285714285714%
