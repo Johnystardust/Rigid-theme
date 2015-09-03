@@ -22,7 +22,7 @@ global $post;
             </div>
             <div class="col-md-7">
                 <h2 class="no-margin"><?php the_title(); ?></h2>
-                <?php the_content(); ?>
+                <?php echo get_post_meta($post->ID, '_service_description', true); ?>
             </div>
         </div>
 

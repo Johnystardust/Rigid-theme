@@ -48,12 +48,36 @@ function tvds_init_services_post_type(){
  * META BOXES
  */
 function tvds_service_meta_box_cb(){
+    add_meta_box('service_description', 'Small Description', 'tvds_service_description_meta_cb', 'service', 'normal', 'default');
     add_meta_box('service_icon', 'Icon', 'tvds_service_icon_meta_cb', 'service', 'normal', 'default');
 }
 
 /*
  * META BOXES CALLBACK
+ *
+ * 1. Small Description
+ * 2. Icon
  */
+
+// 1. Small Description
+function tvds_service_description_meta_cb(){
+    global $post;
+    ?>
+
+    <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table" >
+        <tbody>
+        <tr class="form-field">
+            <td>
+                <textarea name="_service_description" id="description" rows="5" placeholder="write a small description" style="resize: vertical; width: 100%"><?php echo get_post_meta($post->ID, '_service_description', true); ?></textarea>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+<?php
+}
+
+// 2. Icon
 function tvds_service_icon_meta_cb(){
     global $post;
 
@@ -156,6 +180,9 @@ function tvds_save_services_meta($post_id){
         return;
     }
     // Checks for input and sanitizes/saves if needed
+    if(isset($_POST['_service_description'])){
+        update_post_meta($post_id, '_service_description', $_POST['_service_description']);
+    }
     if(isset($_POST[ '_icon' ])){
         update_post_meta($post_id, '_icon', $_POST['_icon']);
     }

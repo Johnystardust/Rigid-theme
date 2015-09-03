@@ -15,7 +15,7 @@
                 <a>
                     <i class="<?php echo get_post_meta($post->ID, '_icon', true); ?>"></i>
                     <h3><?php the_title(); ?></h3>
-                    <div class="service-info"><span><?php echo get_the_content(); ?></span></div>
+                    <div class="service-info"><span><?php echo get_post_meta($post->ID, '_service_description', true); ?></span></div>
                 </a>
             </div>
         </div>
