@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
             $(".show-work").each(function(index) {
                 $(this).delay(index * 250).fadeIn();
             });
-            $(".more").delay(4 * 250).fadeIn();
+            $(".more-work").delay(4 * 250).fadeIn();
         },
         offset: 350
     });
@@ -69,6 +69,7 @@ jQuery(document).ready(function(){
             $('#pricing').find(".col-md-3").each(function(index) {
                 $(this).delay(index * 250).fadeIn();
             });
+            $('.more-pricing').delay(4 * 250).fadeIn();
         },
         offset: 250
     });

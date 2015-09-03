@@ -8,21 +8,21 @@
                     <div class="tag-line">
                         <label for="inputName"><span>Naam</span></label>
                     </div>
-                    <input type="text" class="form-control name" id="inputName" placeholder="Enter name">
+                    <input type="text" class="form-control name" id="inputName" placeholder="Naam en Achternaam">
                 </div>
                 <!-- E-mail -->
                 <div class="form-group">
                     <div class="tag-line">
                         <label for="inputEmail"><span>E-mail</span></label>
                     </div>
-                    <input type="email" class="form-control email" id="inputEmail" placeholder="Enter e-mail">
+                    <input type="email" class="form-control email" id="inputEmail" placeholder="E-mail">
                 </div>
                 <!-- Message -->
                 <div class="form-group">
                     <div class="tag-line">
                         <label for="inputText"><span>Bericht</span></label>
                     </div>
-                    <textarea type="text" class="form-control" id="inputText" placeholder="Enter message" rows="10"></textarea>
+                    <textarea style="resize: none;" class="form-control" id="inputText" placeholder="Bericht" rows="10"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Versturen</button>
             </form>

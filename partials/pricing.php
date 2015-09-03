@@ -41,7 +41,7 @@
                             ?>
                         </div>
                         <div class="price-amount">
-                            <h2>€ <?php echo get_post_meta($post->ID, '_pricing_price', true); ?>,-</h2>
+                            <h2>€ <?php echo get_post_meta($post->ID, '_pricing_price', true); ?></h2>
                         </div>
                         <a href="<?php echo the_permalink(); ?>" class="btn btn-primary buy">Bekijk details</a>
                     </div>
@@ -49,6 +49,12 @@
             <?php
             endwhile; wp_reset_postdata();
             ?>
+
+
         </div>
+    </div>
+
+    <div class="more-pricing text-center">
+        <a class="btn btn-primary" href="<?php echo get_page_link(76)?>">Meer informatie...</a>
     </div>
 </div>

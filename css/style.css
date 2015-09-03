@@ -208,7 +208,7 @@ footer {
       list-style-type: none; }
     .works .details h3 {
       margin: 0; }
-  .works .more {
+  .works .more-work {
     position: relative;
     margin-top: 25px; }
 
@@ -245,11 +245,11 @@ footer {
 .pricing {
   background: url("../images/rigid-pricing-optimized.jpg") fixed center;
   background-size: cover;
-  min-height: 617px;
+  min-height: 566px;
   border-bottom: solid #474747 20px;
   border-top: solid #474747 20px;
   color: #ffffff;
-  padding: 100px 0 100px 0; }
+  padding: 50px 0 50px 0; }
   .pricing .col-md-3 {
     padding: 0; }
   .pricing .price {
@@ -282,6 +282,9 @@ footer {
     transform: scale(1.2);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     z-index: 10000; }
+  .pricing .more-pricing {
+    position: relative;
+    margin-top: 25px; }
 
 .contact .form-contact {
   background-color: #ffffff;
@@ -496,6 +499,14 @@ footer {
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-top: 50px; }
+
+.services-template {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .services-template .row {
+    margin-top: 50px; }
+  .services-template i {
+    font-size: 50px; }
 
 @media screen and (max-width: 768px) {
   .work {

@@ -29,15 +29,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo site_url(); ?>" class="navbar-brand pull-left">Rigid Webdesign</a>
+                <a class="navbar-brand navbar-brand pull-left" href="<?php echo site_url(); ?>">Rigid Webdesign</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="<?php echo site_url(); ?>">Home</a></li>
-                    <li><a href="<?php echo get_page_link(6); ?>">Work</a></li>
+                    <li><a href="<?php echo get_page_link(6); ?>">Werk</a></li>
                     <li><a href="<?php echo get_page_link(110); ?>">Diensten</a></li>
                     <li><a href="<?php echo get_page_link(76); ?>">Offerte</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="<?php echo get_page_link(121); ?>">Contact</a></li>
                 </ul>
             </div>
         </div>

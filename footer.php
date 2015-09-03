@@ -39,10 +39,6 @@
                         <li><a href="<?php echo $display_option['twitter'] ?>" target="_blank"><i class="icon-twitter-circled"></i></a></li>
                     <?php
                     } ?>
-
-
-
-
                 </ul>
             </div>
         </div>

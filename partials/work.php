@@ -55,7 +55,7 @@
         }
         if($i >= 4){
             ?>
-            <div class="more text-center">
+            <div class="more-work text-center">
                 <a class="btn btn-primary" href="<?php echo get_page_link(6)?>">Bekijk meer...</a>
             </div>
             <?php

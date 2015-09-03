@@ -8,7 +8,8 @@ jQuery(document).ready(function(){
     $(".maps-close").hide();
     $(".go-up").hide();
     $(".work").hide();
-    $(".more").hide();
+    $(".more-work").hide();
+    $(".more-pricing").hide();
     $(".service").hide();
     $(".pricing").find(".col-md-3").hide();
 
