@@ -14,10 +14,10 @@ function add_my_custom_scripts(){
 
     // register for home
     wp_register_script('my_javascript' ,get_stylesheet_directory_uri().'/js/javascript.js', false);
-    wp_register_script('my_waypointsjs' ,get_stylesheet_directory_uri().'/js/waypoints.js', false);
+    wp_register_script('my_waypoints' ,get_stylesheet_directory_uri().'/js/waypoints.js', false);
 
     // register for work
-    wp_register_script('my_work_waypoints' ,get_stylesheet_directory_uri().'/js/work-waypoints.js', false);
+    wp_register_script('my_work_template' ,get_stylesheet_directory_uri().'/js/work-template.js', false);
 
     // enqueue
     wp_enqueue_script('my_jquery');
@@ -28,11 +28,11 @@ function add_my_custom_scripts(){
     // enqueue if home
     if(is_home()){
         wp_enqueue_script('my_javascript');
-        wp_enqueue_script('my_waypointsjs');
+        wp_enqueue_script('my_waypoints');
     }
     // enqueue if work
-    if(is_page('Work')){
-        wp_enqueue_script('my_work_waypoints');
+    if(is_page('Werk')){
+        wp_enqueue_script('my_work_template');
     }
 }
 

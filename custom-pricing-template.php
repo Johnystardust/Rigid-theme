@@ -4,6 +4,14 @@ Template Name: Pricing Template
 */
 
 get_header(); ?>
+<div class="container-fluid pricing-template-header">
+    <h1 class="no-margin"><?php the_title(); ?></h1>
+    <div class="container intro-pricing">
+        <div class="col-md-8 col-md-offset-2">
+            <?php the_content(); ?>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid pricing-template no-padding">
     <?php
@@ -60,5 +68,6 @@ get_header(); ?>
     <?php endwhile; wp_reset_postdata(); ?>
 </div>
 
+<?php include_once "partials/quote.php"; ?>
 
 <?php get_footer(); ?>
