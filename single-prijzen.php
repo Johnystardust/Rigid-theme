@@ -1,34 +1,24 @@
 <?php
-/*
-Template Name: Pricing Template
-*/
+/**
+ * The template for the single prijzen posts
+ */
 
-get_header(); ?>
-<div class="container-fluid pricing-template-header">
-    <h1 class="no-margin"><?php the_title(); ?></h1>
-    <div class="container intro-pricing">
-        <div class="col-md-8 col-md-offset-2">
-            <?php the_content(); ?>
-        </div>
-    </div>
-</div>
+get_header();
 
-<div class="container-fluid pricing-template no-padding">
-    <?php
-    $args = array( 'post_type' => 'pricing');
-    $the_query = new WP_Query($args);
+global $post;
+// Get the services from the pricing options
+$options = get_option('tvds_theme_pricing_options');
+$services = $options['pricing'];
+$filtered = array_filter($services);
 
-    // Get the services from the pricing options
-    $options = get_option('tvds_theme_pricing_options');
-    $services = $options['pricing'];
-    $filtered = array_filter($services);
+// Get the checked options
+$checked = get_post_meta($post->ID, '_pricing_check', true);
+?>
 
-    while($the_query->have_posts() ) : $the_query->the_post();
-        // Get the checked options
-        $checked = get_post_meta($post->ID, '_pricing_check', true);
-        ?>
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-        <div class="row <?php echo strtolower(get_the_title());; ?>">
+    <div class="container-fluid pricing-single">
+        <div class="row">
             <div class="container">
                 <div class="col-md-8 col-md-offset-2">
                     <h1><?php the_title(); ?></h1>
@@ -44,11 +34,11 @@ get_header(); ?>
                             if(in_array($service, $checked)){
                                 ?>
                                 <div class="col-md-1 service-list-horizontal include"><i class="icon-<?php echo strtolower($service); ?>"></i><p><?php echo $service ?></p></div>
-                                <?php
+                            <?php
                             } else {
                                 ?>
                                 <div class="col-md-1 service-list-horizontal exclude"><i class="icon-<?php echo strtolower($service); ?>"></i><p><?php echo $service ?></p></div>
-                                <?php
+                            <?php
                             }
                         }
                         ?>
@@ -61,13 +51,10 @@ get_header(); ?>
                     </div>
                     <a href="<?php echo the_permalink(); ?>" class="btn btn-primary buy">Bekijk details</a>
                 </div>
-
             </div>
         </div>
+    </div>
 
-    <?php endwhile; wp_reset_postdata(); ?>
-</div>
-
-<?php include_once "partials/quote.php"; ?>
-
-<?php get_footer(); ?>
+<?php endwhile;
+get_footer();
+?>

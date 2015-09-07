@@ -9,7 +9,7 @@
 
         <?php
         $i = 0;
-        $args = array( 'post_type' => 'work', 'posts_per_page' => 4 );
+        $args = array( 'post_type' => 'werk', 'posts_per_page' => 4 );
         $the_query = new WP_Query($args);
         while($the_query->have_posts() ) : $the_query->the_post();
 

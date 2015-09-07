@@ -21,7 +21,7 @@ function create_work_post_type() {
         'not_found'          => 'No projects found',
         'not_found_in_trash' => 'No project found in the Trash',
         'parent_item_colon'  => '',
-        'menu_name'          => 'Projects'
+        'menu_name'          => 'Werk'
     );
     $args = array(
         'labels'                => $labels,
@@ -32,16 +32,16 @@ function create_work_post_type() {
         'register_meta_box_cb'  => 'add_meta_boxes',
         'taxonomies'            => array('category')
     );
-    register_post_type( 'work', $args);
+    register_post_type( 'werk', $args);
 }
 
 /*
  * META BOXES
  */
 function add_meta_boxes(){
-    add_meta_box('work_labels', 'Labels', 'work_labels_meta_cb', 'work', 'side', 'default');
-    add_meta_box('work_header_img', 'Header', 'work_header_img_meta_cb', 'work', 'normal', 'default');
-    add_meta_box('work_big_img', 'Big Image', 'work_big_img_meta_cb', 'work', 'normal', 'default');
+    add_meta_box('work_labels', 'Labels', 'work_labels_meta_cb', 'werk', 'side', 'default');
+    add_meta_box('work_header_img', 'Header', 'work_header_img_meta_cb', 'werk', 'normal', 'default');
+    add_meta_box('work_big_img', 'Big Image', 'work_big_img_meta_cb', 'werk', 'normal', 'default');
 }
 
 /*
@@ -123,6 +123,15 @@ function work_header_img_meta_cb(){
             <td>
                 <input id="header_link" name="_header_link" type="text" style="width: 95%" value="<?php echo get_post_meta($post->ID, '_header_link', true); ?>" size="50"
                        class="code" placeholder="http://www."/>
+            </td>
+        </tr>
+        <tr class="form-field">
+            <th valign="top" scope="row">
+                <label for="client_link">Client Link</label>
+            </th>
+            <td>
+                <input id="client_link" name="_client_link" type="text" style="width: 95%" value="<?php echo get_post_meta($post->ID, '_client_link', true); ?>" size="50"
+                       class="code" placeholder="Client Name"/>
             </td>
         </tr>
 
@@ -308,6 +317,9 @@ function save_work_labels_meta($post_id){
     }
     if(isset($_POST[ '_header_link' ])){
         update_post_meta($post_id, '_header_link', $_POST['_header_link']);
+    }
+    if(isset($_POST['_client_link'])){
+        update_post_meta($post_id, '_client_link', $_POST['_client_link']);
     }
     if(isset($_POST[ 'upload_header_image_id' ])){
         update_post_meta($post_id, '_header_img', $_POST['upload_header_image_id']);

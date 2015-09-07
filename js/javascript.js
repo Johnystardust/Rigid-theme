@@ -21,9 +21,11 @@ jQuery(document).ready(function(){
         windowHeight = $(window).height();
 
         $('header').css('height', windowHeight);
+        $('header').css('max-height', windowHeight);
     });
 
     $('header').css('height', windowHeight);
+    $('header').css('max-height', windowHeight);
 
     // Work hover
     $(".work-img").hover(function(){

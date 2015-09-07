@@ -34,10 +34,10 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="<?php echo site_url(); ?>">Home</a></li>
-                    <li><a href="<?php echo get_page_link(6); ?>">Werk</a></li>
-                    <li><a href="<?php echo get_page_link(110); ?>">Diensten</a></li>
-                    <li><a href="<?php echo get_page_link(76); ?>">Prijzen</a></li>
-                    <li><a href="<?php echo get_page_link(121); ?>">Contact</a></li>
+                    <li><a href="<?php echo get_page_link(13); ?>">Werk</a></li>
+                    <li><a href="<?php echo get_page_link(15); ?>">Diensten</a></li>
+                    <li><a href="<?php echo get_page_link(9); ?>">Prijzen</a></li>
+                    <li><a href="<?php echo get_page_link(11); ?>">Contact</a></li>
                 </ul>
             </div>
         </div>

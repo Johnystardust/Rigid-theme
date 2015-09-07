@@ -15,8 +15,8 @@ if($work_options['show_work_header']){
         <div class="container intro-work-project-header">
             <div class="row text-center">
                 <div class="col-md-3">
-                    <h3>Category</h3>
-                    <?php the_category(); ?>
+                    <h3>Opdrachtgever</h3>
+                    <?php echo get_post_meta($post->ID, '_client_link', true); ?>
                 </div>
                 <div class="col-md-6">
                     <h1 class="no-margin" style="font-size: 3em"><?php the_title(); ?></h1>

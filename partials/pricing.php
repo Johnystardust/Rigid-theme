@@ -11,10 +11,10 @@
 
             // Query Arguments
             $args = array(
-                'post_type' => 'pricing',
+                'post_type' => 'prijzen',
                 'posts_per_page' => 4,
                 'orderby' => 'date',
-                'order' => 'DEC'
+                'order' => 'ASC'
             );
 
 

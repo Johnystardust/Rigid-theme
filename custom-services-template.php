@@ -11,7 +11,7 @@ global $post;
 <div class="container-fluid services-template no-padding">
     <div class="container">
     <?php
-    $args = array( 'post_type' => 'service');
+    $args = array( 'post_type' => 'diensten', 'order' => 'ASC');
     $the_query = new WP_Query($args);
 
     while($the_query->have_posts() ) : $the_query->the_post(); ?>

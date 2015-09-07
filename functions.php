@@ -1,5 +1,8 @@
 <?php
 
+// Enable Featured Image Support
+add_theme_support( 'post-thumbnails' );
+
 // Enqueue the scripts and styles
 add_action('wp_enqueue_scripts', 'add_my_custom_scripts');
 function add_my_custom_scripts(){

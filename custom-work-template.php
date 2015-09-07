@@ -5,9 +5,14 @@ Template Name: Work Template
 
 get_header(); ?>
 
+<div class="container-fluid work-template-header text-center">
+    <h1><?php echo the_title(); ?></h1>
+    <?php echo the_content(); ?>
+</div>
+
 <div class="container-fluid work-projects no-padding">
     <?php
-    $args = array( 'post_type' => 'work' );
+    $args = array( 'post_type' => 'werk' );
     $the_query = new WP_Query($args);
 
     while($the_query->have_posts() ) : $the_query->the_post();?>
@@ -45,5 +50,7 @@ get_header(); ?>
 
     <?php endwhile; wp_reset_postdata(); ?>
 </div>
+
+<?php include_once "partials/quote.php"; ?>
 
 <?php get_footer(); ?>

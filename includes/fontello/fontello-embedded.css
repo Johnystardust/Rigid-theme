@@ -129,7 +129,7 @@
 
 /* Icons with a custom name */
 .icon-website:before { content: '\e844'; } /* '' */
-.icon-design:before { content: '\e829'; } /* '' */
+.icon-ontwerp:before { content: '\e829'; } /* '' */
 .icon-responsive:before { content: '\e81c'; } /* '' */
 .icon-wordpress:before { content: '\e81f'; } /* '' */
 .icon-seo:before { content: '\e826'; } /* '' */

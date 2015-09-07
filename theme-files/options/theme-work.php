@@ -51,17 +51,6 @@ function tvds_init_work_options(){
 
     // THE SETTINGS FIELDS
     add_settings_field(
-        'show_work_header',             // ID used to identify this section and with which to register options
-        'Display header on work page',  // The label to the left of the option interface element
-        'tvds_toggle_work_header_cb',   // The name of the function responsible for rendering the option interface
-        'tvds_theme_work_options',      // The page on which this option will be displayed
-        'work_settings_section',        // the name of the section to which this field belongs
-        array(                          // the array of arguments to pass to the callback. In this case, just a description
-            'Activate this setting to display the header on the work page section.'
-        )
-    );
-
-    add_settings_field(
         'work_labels',                  // ID used to identify this section and with which to register options
         'Work Labels',                  // The label to the left of the option interface element
         'tvds_add_labels_cb',           // The name of the function responsible for rendering the option interface
@@ -75,25 +64,6 @@ function tvds_init_work_options(){
 add_action('admin_init', 'tvds_init_work_options');
 
 // THE FIELDS CALLBACK
-
-/**
- * Toggle work header
- * @param $args
- */
-function tvds_toggle_work_header_cb($args){
-    // First, we read the options collection
-    $options = get_option('tvds_theme_work_options');
-
-    // Next, we update the name attribute to access this element's ID in the context of the display options array
-    // We also access the show_header element of the options collection in the call to the checked() helper function
-    $html = '<input type="checkbox" id="show_work_header" name="tvds_theme_work_options[show_work_header]" value="1" '.checked(1, $options['show_work_header'], false).'>';
-
-    // Here, we'll take the first argument of the array and add it to a label next to the checkbox
-    $html .= '<label for="show_work_header">'.$args[0].'</label>';
-
-    echo $html;
-}
-
 /**
  * Add the labels you want to select in the work post
  */

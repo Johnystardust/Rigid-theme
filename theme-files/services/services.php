@@ -31,7 +31,7 @@ function tvds_init_services_post_type(){
         'not_found'             => 'No service found',
         'not_found_in_trash'    => 'No service found in the Trash',
         'parent_item_colon'     => '',
-        'menu_name'             => 'Services'
+        'menu_name'             => 'Diensten'
     );
     $args = array(
         'labels'                => $labels,
@@ -41,15 +41,15 @@ function tvds_init_services_post_type(){
         'has_archive'           => false,
         'register_meta_box_cb'  => 'tvds_service_meta_box_cb'
     );
-    register_post_type('service', $args);
+    register_post_type('diensten', $args);
 }
 
 /*
  * META BOXES
  */
 function tvds_service_meta_box_cb(){
-    add_meta_box('service_description', 'Small Description', 'tvds_service_description_meta_cb', 'service', 'normal', 'default');
-    add_meta_box('service_icon', 'Icon', 'tvds_service_icon_meta_cb', 'service', 'normal', 'default');
+    add_meta_box('service_description', 'Small Description', 'tvds_service_description_meta_cb', 'diensten', 'normal', 'default');
+    add_meta_box('service_icon', 'Icon', 'tvds_service_icon_meta_cb', 'diensten', 'normal', 'default');
 }
 
 /*

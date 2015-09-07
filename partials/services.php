@@ -2,7 +2,7 @@
     <h1 class="text-center">Wat kan ik voor u doen</h1>
     <?php
     $i = 0;
-    $args = array('post_type' => 'service', 'order' => 'ASC');
+    $args = array('post_type' => 'diensten', 'order' => 'ASC');
     $the_query = new WP_Query($args);
     while($the_query->have_posts()) : $the_query->the_post();
         if($i%3==0){ // place opening div if counter is multiple of 4

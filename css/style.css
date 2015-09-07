@@ -161,6 +161,8 @@ footer {
   margin-top: 50px;
   margin-bottom: 50px;
   text-align: justify; }
+  .introduction h1 {
+    text-align: center; }
 
 .works {
   background: url("../images/rigid-work-optimized.jpg") fixed center;
@@ -428,9 +430,15 @@ footer {
   position: absolute;
   top: 0; }
 
+.work-template-header {
+  background: url("../images/rigid-work-optimized.jpg") fixed center;
+  border-bottom: solid #474747 20px;
+  margin-top: 50px;
+  min-height: 400px;
+  color: #ffffff; }
+
 .work-projects {
-  background-color: #373737;
-  margin-top: 50px; }
+  background-color: #373737; }
   .work-projects .work-thumb img {
     width: 100%;
     height: auto; }
@@ -453,7 +461,7 @@ footer {
   padding-left: 0 !important;
   padding-right: 0 !important;
   border-bottom: 20px #474747 solid;
-  min-height: 500px;
+  min-height: 400px;
   margin-top: 50px;
   overflow: hidden;
   color: white; }
@@ -500,10 +508,13 @@ footer {
     background-color: #888888; }
   .pricing-template .diamond {
     background-color: #999999; }
-  .pricing-template .services-list-horizontal .service-list-horizontal {
-    text-align: center; }
-  .pricing-template .services-list-horizontal i {
-    font-size: 50px; }
+  .pricing-template .services-list-horizontal {
+    padding-top: 25px;
+    padding-bottom: 25px; }
+    .pricing-template .services-list-horizontal .service-list-horizontal {
+      text-align: center; }
+    .pricing-template .services-list-horizontal i {
+      font-size: 50px; }
   .pricing-template .exclude {
     color: #474747; }
 

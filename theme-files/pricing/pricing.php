@@ -21,7 +21,7 @@ function tvds_init_pricing_post_type(){
         'not_found'             => 'No pricing found',
         'not_found_in_trash'    => 'No pricing found in the Trash',
         'parent_item_colon'     => '',
-        'menu_name'             => 'Pricing'
+        'menu_name'             => 'Prijzen'
     );
     $args = array(
         'labels'                => $labels,
@@ -31,15 +31,15 @@ function tvds_init_pricing_post_type(){
         'has_archive'           => false,
         'register_meta_box_cb'  => 'tvds_pricing_meta_box_cb'
     );
-    register_post_type('pricing', $args);
+    register_post_type('prijzen', $args);
 }
 
 /*
  * META BOXES
  */
 function tvds_pricing_meta_box_cb(){
-    add_meta_box('pricing_services', 'Services', 'tvds_pricing_services_meta_cb', 'pricing', 'normal', 'default');
-    add_meta_box('pricing_price', 'Price', 'tvds_pricing_price_meta_cb', 'pricing', 'normal', 'default');
+    add_meta_box('pricing_services', 'Services', 'tvds_pricing_services_meta_cb', 'prijzen', 'normal', 'default');
+    add_meta_box('pricing_price', 'Price', 'tvds_pricing_price_meta_cb', 'prijzen', 'normal', 'default');
 }
 
 /*
