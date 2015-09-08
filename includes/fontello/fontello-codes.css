@@ -73,3 +73,10 @@
 .icon-wrench:before { content: '\e847'; } /* '' */
 .icon-cog-alt:before { content: '\e848'; } /* '' */
 .icon-cog:before { content: '\e849'; } /* '' */
+.icon-th:before { content: '\e84a'; } /* '' */
+.icon-th-large:before { content: '\e84b'; } /* '' */
+.icon-th-list:before { content: '\e84c'; } /* '' */
+.icon-th-1:before { content: '\e84d'; } /* '' */
+.icon-thumbs-up:before { content: '\e84e'; } /* '' */
+.icon-thumbs-down:before { content: '\e84f'; } /* '' */
+.icon-th-2:before { content: '\e850'; } /* '' */

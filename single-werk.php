@@ -41,37 +41,51 @@ if($work_options['show_work_header']){
             </div>
         </div>
 
-        <div class="container">
+        <div class="container work-single-content-wrapper">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <?php the_content(); ?>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-
-                    <?php
-                    $labels = get_post_meta($post->ID, "_labels", true);
-                    //            print_r($labels);
-
-                    if(!empty($labels)){
-                        foreach($labels as $label){
-                            ?>
-                            <div class="col-md-3 work-project-label">
-                                <i class="<?php echo $label['icon'] ?>"></i>
-                                <span><?php echo $label['name']; ?></span>
-                            </div>
-                        <?php
-                        }
-                    }
-                    ?>
-                </div>
-            </div>
         </div>
 
+    </div>
 
+    <div class="container-fluid footer-work-projects-single no-padding">
+        <div class="row">
+            <?php
+            $next_post = get_next_post();
+            $prev_post = get_previous_post()
+            ?>
 
+            <a href="<?php echo get_permalink($prev_post->ID); ?>">
+                <div class="col-md-2">
+                    <span><i class="icon-left-open"></i> Prev Post</span>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="col-md-2 border">
+                    <span><i class="icon-facebook-squared"></i> Delen</span>
+                </div>
+            </a>
+
+            <div class="col-md-4">
+                <span>Copyright © Rigid Webdesign 2015</span>
+            </div>
+
+            <a href="<?php echo get_page_link(13); ?>">
+                <div class="col-md-2 border">
+                    <span>Overzicht <i class="icon-th"></i></span>
+                </div>
+            </a>
+
+            <a href="<?php echo get_permalink($next_post->ID); ?>">
+                <div class="col-md-2">
+                    <span>Next Post <i class="icon-right-open"></i></span>
+                </div>
+            </a>
+        </div>
     </div>
 <?php endwhile; ?>
 

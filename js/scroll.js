@@ -2,7 +2,6 @@ jQuery(document).ready(function(){
     $ = jQuery;
 
     $(window).load(function () {
-        alert('load-complete');
         if($(window).scrollTop() > 100){
             $('.go-up').fadeIn();
         }

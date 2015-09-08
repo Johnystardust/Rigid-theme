@@ -4,6 +4,8 @@
 add_theme_support( 'post-thumbnails' );
 
 // Enqueue the scripts and styles
+
+// SCRIPTS
 add_action('wp_enqueue_scripts', 'add_my_custom_scripts');
 function add_my_custom_scripts(){
     // de-register stock jquery
@@ -21,6 +23,8 @@ function add_my_custom_scripts(){
 
     // register for work
     wp_register_script('my_work_template' ,get_stylesheet_directory_uri().'/js/work-template.js', false);
+    wp_register_script('my_work_single' ,get_stylesheet_directory_uri().'/js/work-single.js', false);
+
 
     // enqueue
     wp_enqueue_script('my_jquery');
@@ -37,8 +41,13 @@ function add_my_custom_scripts(){
     if(is_page('Werk')){
         wp_enqueue_script('my_work_template');
     }
+    // enqueue if work single
+    if(is_singular('werk')){
+        wp_enqueue_script('my_work_single');
+    }
 }
 
+// STYLES
 add_action('wp_enqueue_scripts', 'add_my_custom_styles');
 function add_my_custom_styles(){
     //register

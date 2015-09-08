@@ -1,4 +1,6 @@
 jQuery(document).ready(function(){
+    $ = jQuery;
+
     $(".work-thumb-overlay").hide();
 
     // Work hover
