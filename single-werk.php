@@ -54,15 +54,21 @@ if($work_options['show_work_header']){
     <div class="container-fluid footer-work-projects-single no-padding">
         <div class="row">
             <?php
-            $next_post = get_next_post();
-            $prev_post = get_previous_post()
-            ?>
+            $next_post              = get_next_post();
+            $next_permalink         = get_permalink($next_post->ID);
 
-            <a href="<?php echo get_permalink($prev_post->ID); ?>">
-                <div class="col-md-2">
-                    <span><i class="icon-left-open"></i> Prev Post</span>
-                </div>
-            </a>
+            $prev_post              = get_previous_post();
+            $prev_permalink         = get_permalink($prev_post->ID);
+
+            $previous_adjacent_post = get_adjacent_post(true, '', true);
+            $next_adjacent_post     = get_adjacent_post(true, '', false);
+
+            if($previous_adjacent_post){
+                echo '<a href="'.$prev_permalink.'"><div class="col-md-2"><span><i class="icon-left-open"></i> Previous Post</span></div></a>';
+            } else {
+                echo '<div class="col-md-2 not-clickable"><span><i class="icon-left-open"></i> Previous Post</span></div>';
+            }
+            ?>
 
             <a href="#">
                 <div class="col-md-2 border">
@@ -80,11 +86,13 @@ if($work_options['show_work_header']){
                 </div>
             </a>
 
-            <a href="<?php echo get_permalink($next_post->ID); ?>">
-                <div class="col-md-2">
-                    <span>Next Post <i class="icon-right-open"></i></span>
-                </div>
-            </a>
+            <?php
+            if($next_adjacent_post){
+                echo '<a href="'.$next_permalink.'"><div class="col-md-2"><span><i class="icon-right-open"></i> Next Post</span></div></a>';
+            } else {
+                echo '<div class="col-md-2 not-clickable"><span><i class="icon-right-open"></i> Next Post</span></div>';
+            }
+            ?>
         </div>
     </div>
 <?php endwhile; ?>

@@ -491,6 +491,8 @@ footer {
   background-color: #373737;
   color: #ffffff;
   text-align: center; }
+  .footer-work-projects-single .not-clickable {
+    color: #575757; }
   .footer-work-projects-single a {
     color: #ffffff; }
   .footer-work-projects-single .col-md-4 {

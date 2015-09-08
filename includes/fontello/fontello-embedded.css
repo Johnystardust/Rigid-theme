@@ -82,8 +82,8 @@
 .icon-monitor:before { content: '\e81b'; } /* '' */
 .icon-mobile:before { content: '\e81c'; } /* '' */
 .icon-tablet:before { content: '\e81d'; } /* '' */
-.icon-wordpress:before { content: '\e81e'; } /* '' */
-.icon-wordpress-1:before { content: '\e81f'; } /* '' */
+.icon-wordpress-1:before { content: '\e81e'; } /* '' */
+.icon-wordpress:before { content: '\e81f'; } /* '' */
 .icon-angle-circled-left:before { content: '\e820'; } /* '' */
 .icon-angle-circled-right:before { content: '\e821'; } /* '' */
 .icon-angle-circled-up:before { content: '\e822'; } /* '' */
@@ -133,3 +133,11 @@
 .icon-thumbs-up:before { content: '\e84e'; } /* '' */
 .icon-thumbs-down:before { content: '\e84f'; } /* '' */
 .icon-th-2:before { content: '\e850'; } /* '' */
+
+.icon-website:before { content: '\e844'; } /* '' */
+.icon-ontwerp:before { content: '\e829'; } /* '' */
+.icon-responsive:before { content: '\e81c'; } /* '' */
+.icon-wordpress:before { content: '\e81f'; } /* '' */
+.icon-seo:before { content: '\e826'; } /* '' */
+.icon-installatie:before { content: '\e847'; } /* '' */
+.icon-support:before { content: '\e845'; } /* '' */

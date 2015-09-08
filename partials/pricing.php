@@ -55,6 +55,6 @@
     </div>
 
     <div class="more-pricing text-center">
-        <a class="btn btn-primary" href="<?php echo get_page_link(76)?>">Meer informatie...</a>
+        <a class="btn btn-primary" href="<?php echo get_page_link(9)?>">Meer informatie...</a>
     </div>
 </div>
