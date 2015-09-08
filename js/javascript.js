@@ -22,10 +22,14 @@ jQuery(document).ready(function(){
 
         $('header').css('height', windowHeight);
         $('header').css('max-height', windowHeight);
+
+        $('.video-wrapper').css('height', windowHeight - 20);
     });
 
     $('header').css('height', windowHeight);
     $('header').css('max-height', windowHeight);
+
+    $('.video-wrapper').css('height', windowHeight - 20);
 
     // Work hover
     $(".work-img").hover(function(){
@@ -71,14 +75,8 @@ jQuery(document).ready(function(){
         return false;
     });
 
-    // Vars
-    var scrollTop     = $(window).scrollTop(),
-        elementOffset = $(".intro").offset().top,
-        distance      = (elementOffset - scrollTop);
-
     // Scroll down
-    $(".scroll-down").find("a").click(function(){
-        $("html, body").animate({ scrollTop: distance}, 600);
-        return false;
+    $(".scroll-down").click(function() {
+        $('html, body').animate({ scrollTop: ($(".intro").offset().top - 50 ) }, 600);
     });
 });
