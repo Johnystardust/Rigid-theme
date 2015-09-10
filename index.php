@@ -10,18 +10,18 @@
 <?php
 get_header();
 
-include "partials/slider.php";
+get_template_part( 'partials/slider' );
 
-include "partials/introduction.php";
+get_template_part( 'partials/introduction' );
 
-include "partials/work.php";
+get_template_part( 'partials/work' );
 
-include "partials/services.php";
+get_template_part( 'partials/services' );
 
-include "partials/pricing.php";
+get_template_part( 'partials/pricing' );
 
-include "partials/contact.php";
+get_template_part( 'partials/contact' );
 
-include "partials/quote.php";
+get_template_part( 'partials/quote' );
 
 get_footer();

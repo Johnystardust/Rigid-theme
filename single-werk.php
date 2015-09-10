@@ -88,9 +88,9 @@ if($work_options['show_work_header']){
 
             <?php
             if($next_adjacent_post){
-                echo '<a href="'.$next_permalink.'"><div class="col-md-2"><span><i class="icon-right-open"></i> Next Post</span></div></a>';
+                echo '<a href="'.$next_permalink.'"><div class="col-md-2"><span><i class="icon-right-open"></i> Vorige project</span></div></a>';
             } else {
-                echo '<div class="col-md-2 not-clickable"><span><i class="icon-right-open"></i> Next Post</span></div>';
+                echo '<div class="col-md-2 not-clickable"><span>Volgende project <i class="icon-right-open"></i></span></div>';
             }
             ?>
         </div>

@@ -68,6 +68,6 @@ get_header(); ?>
     <?php endwhile; wp_reset_postdata(); ?>
 </div>
 
-<?php include_once "partials/quote.php"; ?>
+<?php get_template_part( 'partials/quote' ); ?>
 
 <?php get_footer(); ?>
