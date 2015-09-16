@@ -9,8 +9,8 @@
 add_action( 'init', 'create_work_post_type' );
 function create_work_post_type() {
     $labels = array(
-        'name'               => 'Projects',
-        'singular_name'      => 'Project',
+        'name'               => 'Werk',
+        'singular_name'      => 'Werk',
         'add_new'            => 'Add New', 'Project',
         'add_new_item'       => 'Add New Project',
         'edit_item'          => 'Edit Project',
@@ -28,7 +28,7 @@ function create_work_post_type() {
         'public'                => true,
         'menu_position'         => 6,
         'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
-        'has_archive'           => false,
+        'has_archive'           => true,
         'register_meta_box_cb'  => 'add_meta_boxes',
         'taxonomies'            => array('category')
     );

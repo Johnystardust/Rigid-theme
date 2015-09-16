@@ -84,6 +84,16 @@ a
     background-color: $blue
     color: $white
 
+// 3.3 Breadcrumbs
+.breadcrumbs
+  margin-top: 50px
+  background-color: $dark-grey
+  .container
+    padding-top: 5px
+    padding-bottom: 5px
+    color: #9d9d9d
+    font-size: 12px
+
 // 4. Header
 
 // 4.1 Index video header
@@ -156,7 +166,6 @@ header
 .custom-page-header
   min-height: 300px
   border-bottom: solid $dark-grey 20px
-  margin-top: 50px
   color: $white
   .template-header-title
     margin-top: 25px
@@ -309,7 +318,7 @@ header
     height: 500px
     left: 0
     display: table
-    form
+    .form-contact-container
       display: table-cell
       vertical-align: middle
     .tag-line
@@ -379,8 +388,6 @@ header
     height: 500px
     width: 100%
     position: absolute
-  form
-    margin-top: 30px
   a
     color: $white
   a:hover
@@ -481,7 +488,6 @@ header
   padding-right: 0 !important
   border-bottom: 20px $dark-grey solid
   min-height: 400px
-  margin-top: 50px
   overflow: hidden
   color: white
 
@@ -663,6 +669,13 @@ body
 .right
   float: right
   margin-top: 30px
+.form-group-double
+  display: inline-block
+  width: 100%
+.form-double-left
+  padding-left: 0 !important
+.form-double-right
+  padding-right: 0 !important
 
 // 18. Media Responsive max 768px
 @media screen and (max-width: 768px)

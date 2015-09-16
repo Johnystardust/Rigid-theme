@@ -2,7 +2,9 @@
 <div class="contact container-fluid no-padding">
     <div class="row no-margin">
         <div class="col-md-6 form-contact">
-            <?php echo do_shortcode('[tvds_contact_form]'); ?>
+            <div class="form-contact-container">
+                <?php echo do_shortcode('[tvds_contact_form]'); ?>
+            </div>
         </div>
         <div class="col-md-6 no-padding form-info">
             <div class="overlay-maps text-center">

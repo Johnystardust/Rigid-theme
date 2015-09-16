@@ -35,6 +35,15 @@ a {
     background-color: #337ab7;
     color: #ffffff; }
 
+.breadcrumbs {
+  margin-top: 50px;
+  background-color: #474747; }
+  .breadcrumbs .container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #9d9d9d;
+    font-size: 12px; }
+
 header {
   height: 100vh;
   color: #ffffff;
@@ -98,7 +107,6 @@ header {
 .custom-page-header {
   min-height: 300px;
   border-bottom: solid #474747 20px;
-  margin-top: 50px;
   color: #ffffff; }
   .custom-page-header .template-header-title {
     margin-top: 25px; }
@@ -243,7 +251,7 @@ header {
   height: 500px;
   left: 0;
   display: table; }
-  .contact .form-contact form {
+  .contact .form-contact .form-contact-container {
     display: table-cell;
     vertical-align: middle; }
   .contact .form-contact .tag-line {
@@ -313,8 +321,6 @@ header {
   height: 500px;
   width: 100%;
   position: absolute; }
-.contact form {
-  margin-top: 30px; }
 .contact a {
   color: #ffffff; }
 .contact a:hover {
@@ -407,7 +413,6 @@ header {
   padding-right: 0 !important;
   border-bottom: 20px #474747 solid;
   min-height: 400px;
-  margin-top: 50px;
   overflow: hidden;
   color: white; }
 
@@ -592,6 +597,16 @@ body {
 .right {
   float: right;
   margin-top: 30px; }
+
+.form-group-double {
+  display: inline-block;
+  width: 100%; }
+
+.form-double-left {
+  padding-left: 0 !important; }
+
+.form-double-right {
+  padding-right: 0 !important; }
 
 @media screen and (max-width: 768px) {
   .work {

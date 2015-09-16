@@ -43,6 +43,21 @@
         </div>
     </nav>
 
+    <!-- Breadcrumbs -->
+    <?php
+    if( !is_home() ){
+        ?>
+        <div class="container-fluid breadcrumbs">
+            <div class="container">
+                <span>U bent hier:</span>
+                <?php if( function_exists( 'yoast_breadcrumb' ) ) {
+                    yoast_breadcrumb('<span id="breadcrumbs" class="no-margin">','</span>');
+                } ?>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
 
     <!-- go up -->
     <a class="go-up text-center">

@@ -9,8 +9,8 @@
 add_action('init', 'tvds_init_pricing_post_type');
 function tvds_init_pricing_post_type(){
     $labels = array(
-        'name'                  => 'Pricing',
-        'singular_name'         => 'Pricing',
+        'name'                  => 'Prijzen',
+        'singular_name'         => 'Prijs',
         'add_new'               => 'Add New', 'Pricing',
         'add_new_item'          => 'Add New Pricing',
         'edit_item'             => 'Edit Pricing',
@@ -28,7 +28,7 @@ function tvds_init_pricing_post_type(){
         'public'                => true,
         'menu_position'         => 8,
         'supports'              => array( 'title', 'editor'),
-        'has_archive'           => false,
+        'has_archive'           => true,
         'register_meta_box_cb'  => 'tvds_pricing_meta_box_cb'
     );
     register_post_type('prijzen', $args);
