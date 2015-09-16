@@ -55,7 +55,29 @@
     });
 </script>
 
-<div class="container-fluid quote no-padding">
+
+<?php
+    if( is_home() ){
+        $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-pricing-optimized.jpg') fixed center 70%";
+    }
+    if( is_page( 'Werk' ) ){
+        $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-work-optimized.jpg') fixed center 90%";
+    }
+    if( is_page( 'Prijzen' ) ){
+        $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-pricing-optimized.jpg') fixed center 70%";
+    }
+    if( is_page( 'Diensten' ) ){
+        $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-work-optimized.jpg') fixed center 90%";
+    }
+    if( is_page( 'Contact' ) ){
+        $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-work-optimized.jpg') fixed center 90%";
+    }
+    if( is_404() ){
+        $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-pricing-optimized.jpg') fixed center 70%";
+    }
+?>
+
+<div class="container-fluid quote no-padding" style="background: <?php echo $background_image; ?>; background-size: cover">
     <div class="row">
         <div class="col-md-12 quote-wrapper text-center">
             <h2 class="new-quote"><span>“Every child is an <strong>artist</strong>.</span><span class="clearfix"></span><span>The challenge is to remain an <strong>artist</strong> after you grow up.”</span></h2>

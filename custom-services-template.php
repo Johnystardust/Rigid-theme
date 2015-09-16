@@ -7,6 +7,18 @@ get_header();
 
 global $post;
 ?>
+<div class="container-fluid custom-page-header services-template-header">
+    <div class="container">
+        <div class="row text-center template-header-title">
+            <h1 class="no-margin"><?php the_title(); ?></h1>
+        </div>
+        <div class="row template-header-description">
+            <div class="col-md-8 col-md-offset-2">
+                <?php the_content(); ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid services-template no-padding">
     <div class="container">
@@ -30,5 +42,6 @@ global $post;
     </div>
 </div>
 
-<?php
-get_footer();
+<?php get_template_part( 'partials/quote' ); ?>
+
+<?php get_footer();

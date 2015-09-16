@@ -53,20 +53,20 @@ if($work_options['show_work_header']){
 
     <div class="container-fluid footer-work-projects-single no-padding">
         <div class="row">
-            <?php
-            $next_post              = get_next_post();
-            $next_permalink         = get_permalink($next_post->ID);
+            <?php                                                                                                       // Get the next and previous post ID
+            $next_post              = get_next_post();                                                                  // - Get the next post
+            $next_permalink         = get_permalink($next_post->ID);                                                    // - Use the $next_post to get the permalink
 
-            $prev_post              = get_previous_post();
-            $prev_permalink         = get_permalink($prev_post->ID);
+            $prev_post              = get_previous_post();                                                              // - Get the Previous post
+            $prev_permalink         = get_permalink($prev_post->ID);                                                    // - Use the previous post to get the permalink
 
-            $previous_adjacent_post = get_adjacent_post(true, '', true);
-            $next_adjacent_post     = get_adjacent_post(true, '', false);
+            $previous_adjacent_post = get_adjacent_post(true, '', true);                                                // - Check if there is a previous post
+            $next_adjacent_post     = get_adjacent_post(true, '', false);                                               // - Check if there is a next post
 
             if($previous_adjacent_post){
-                echo '<a href="'.$prev_permalink.'"><div class="col-md-2"><span><i class="icon-left-open"></i> Previous Post</span></div></a>';
+                echo '<a href="'.$prev_permalink.'"><div class="col-md-2"><span><i class="icon-left-open"></i> Vorige project</span></div></a>';
             } else {
-                echo '<div class="col-md-2 not-clickable"><span><i class="icon-left-open"></i> Previous Post</span></div>';
+                echo '<div class="col-md-2 not-clickable"><span><i class="icon-left-open"></i> Vorige project</span></div>';
             }
             ?>
 
@@ -88,7 +88,7 @@ if($work_options['show_work_header']){
 
             <?php
             if($next_adjacent_post){
-                echo '<a href="'.$next_permalink.'"><div class="col-md-2"><span><i class="icon-right-open"></i> Vorige project</span></div></a>';
+                echo '<a href="'.$next_permalink.'"><div class="col-md-2"><span>Volgende project <i class="icon-right-open"></i></span></div></a>';
             } else {
                 echo '<div class="col-md-2 not-clickable"><span>Volgende project <i class="icon-right-open"></i></span></div>';
             }

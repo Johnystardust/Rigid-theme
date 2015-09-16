@@ -5,9 +5,17 @@ Template Name: Work Template
 
 get_header(); ?>
 
-<div class="container-fluid work-template-header text-center">
-    <h1><?php echo the_title(); ?></h1>
-    <?php echo the_content(); ?>
+<div class="container-fluid custom-page-header work-template-header">
+    <div class="container">
+        <div class="row text-center template-header-title">
+            <h1 class="no-margin"><?php the_title(); ?></h1>
+        </div>
+        <div class="row template-header-description">
+            <div class="col-md-8 col-md-offset-2">
+                <?php the_content(); ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid work-projects no-padding">

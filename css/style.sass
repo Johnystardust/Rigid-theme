@@ -1,34 +1,69 @@
-//  Variables Mixins etc
-//  colors
+// This is the stylesheet for Rigid-webdesign
+// Author:    Tim van der Slik
+
+// Table of Contents //
+
+// 1.   Variables
+// 2.   Typography
+// 3.   Navigation
+// 4.   Header
+// 5.   Introduction
+// 6.   Index styles
+// 7.   Work Page Template
+// 8.   Services Page Template
+// 9.   Pricing Page Template
+// 10.  Contact Page Template
+// 11.  Work Single
+// 12.  Services Single
+// 13.  Pricing Single
+// 14.  Quotes
+// 15.  Footer
+// 16.  404.php
+// 17.  Miscellaneous
+// 18.  Media Responsive max 768px
+// 19.  Media Responsive min 768px
+// 20.  Media Responsive max 860px
+// 21.  Media Responsive min 992px
+// 22.  Media Responsive max 992px
+// 23.  Media Responsive min 1200px
+// 24.  Bootstrap 7 Equal Colls
+
+
+// 1. Variables
+
+// 1.1 Colors
 $blue: #337ab7
-$grey-dark: #474747
+$dark-grey: #474747
 $white: #ffffff
 
-$get-path-to-assets : "../images/rigid-header-optimized.jpg"
+// 1.2 Path
+$header_image   : "../images/rigid-header-optimized.jpg"
+$pricing_image  : "../images/rigid-pricing-optimized.jpg"
+$work_image     : "../images/rigid-work-optimized.jpg"
+$overlay_image  : "../images/overlay.png"
 
-
-*
-  -webkit-padding-start: 0px
-  font-family: 'Roboto', sans-serif
-
-// Misc
-body
-  overflow-x: hidden
+// 2. Typography
 p
   font-size: 16px
 a
   cursor: pointer
 
-.no-padding
-  padding: 0 !important
-.padding-left
-  padding-left: 5px
-.padding-right
-  padding-right: 5px
-.no-margin
-  margin: 0 !important
 
+// 3. Navigation
 
+// 3.1 Navbar
+.navbar
+  background-color: $dark-grey !important
+  border-bottom: 1px #373737 solid !important
+  margin-bottom: 0 !important
+  border-radius: 0 !important
+  .navbar-brand
+    margin-left: 15px !important
+  a
+    color: $white
+    text-transform: uppercase
+
+// 3.2 Go up button
 .go-up
   color: $white
   text-decoration: none
@@ -48,41 +83,24 @@ a
   i:hover
     background-color: $blue
     color: $white
-.smaller
-  font-size: 65%
-.left
-  float: left
-  margin-top: 30px
-.right
-  float: right
-  margin-top: 30px
 
-// Nav, Header, Footer
-.navbar
-  background-color: #474747 !important
-  border-bottom: 1px #373737 solid !important
-  margin-bottom: 0 !important
-  border-radius: 0 !important
-  .navbar-brand
-    margin-left: 15px !important
-  a
-    color: $white
-    text-transform: uppercase
+// 4. Header
 
+// 4.1 Index video header
 header
   height: 100vh
   color: $white
-  border-bottom: solid #474747 20px
+  border-bottom: solid $dark-grey 20px
   margin-top: 50px
   .active
     opacity: 1 !important
   #header
     height: 100%
-    //background: url(#{$get-path-to-assets})
-    -webkit-background-size: cover
-    -moz-background-size: cover
-    -o-background-size: cover
-    background-size: cover
+    //background: url(#{$header_image})
+    //-webkit-background-size: cover
+    //-moz-background-size: cover
+    //-o-background-size: cover
+    //background-size: cover
   .banner
     position: absolute
     width: 100%
@@ -134,35 +152,18 @@ header
       a:hover
         color: $blue
 
-footer
-  min-height: 200px
+// 4.2 Page Header
+.custom-page-header
+  min-height: 300px
+  border-bottom: solid $dark-grey 20px
+  margin-top: 50px
   color: $white
-  background-color: #474747
-  p
-    font-size: 14px
-  a
-    color: $white
-  a:hover
-    color: $blue
-    text-decoration: none
-  .row
-    margin-top: 50px
-  ul
-    list-style-type: none
-  .middle
-    float: left
-    margin-top: 30px
-  .contacts
-    margin-left: 40px
-    i:before
-      margin-left: 0
-  .social
-    font-size: 2em
-    margin-right: 40px
-    li
-      float: right
+  .template-header-title
+    margin-top: 25px
+  .template-header-description
+    margin-top: 20px
 
-//  Introduction
+// 5. Introduction
 .introduction
   margin: 0 auto
   margin-top: 50px
@@ -171,11 +172,13 @@ footer
   h1
     text-align: center
 
-//  Work
+// 6. Index styles
+
+// 6.1 Work
 .works
-  background: url("../images/rigid-work-optimized.jpg") fixed center
-  border-bottom: solid #474747 20px
-  border-top: solid #474747 20px
+  background: url(#{$work_image}) fixed center
+  border-bottom: solid $dark-grey 20px
+  border-top: solid $dark-grey 20px
   color: $white
   padding: 50px 0 50px 0
   min-height: 703px
@@ -222,7 +225,7 @@ footer
     position: relative
     margin-top: 25px
 
-//  Services
+// 6.2 Services
 .services
   margin-top: 50px
   margin-bottom: 100px
@@ -253,13 +256,13 @@ footer
   .text-center a:hover
     color: $blue
 
-//  Pricing
+// 6.3 Pricing
 .pricing
-  background: url("../images/rigid-pricing-optimized.jpg") fixed center
+  background: url(#{$pricing_image}) fixed center
   background-size: cover
   min-height: 566px
-  border-bottom: solid #474747 20px
-  border-top: solid #474747 20px
+  border-bottom: solid $dark-grey 20px
+  border-top: solid $dark-grey 20px
   color: $white
   padding: 50px 0 50px 0
   .col-md-3
@@ -279,7 +282,7 @@ footer
       i
         margin-right: 1em
       .exclude
-        color: #474747
+        color: $dark-grey
     .buy
       margin-bottom: 30px
   .bronze
@@ -298,8 +301,7 @@ footer
     position: relative
     margin-top: 25px
 
-
-//  Contact
+// 6.4 Contact
 .contact
   .form-contact
     background-color: $white
@@ -320,7 +322,7 @@ footer
         display: inline-block
         top: -10px
         font-weight: normal !important
-        background: #ffffff
+        background: $white
         padding: 0 15px
     .move-form
       position: absolute
@@ -328,7 +330,7 @@ footer
     height: 500px
     left: 0
   .overlay-maps
-    background-image: url("../images/overlay.png")
+    background: url(#{$overlay_image})
     width: 100%
     min-height: 500px
     position: absolute
@@ -348,7 +350,7 @@ footer
         height: 50px
         width: 50px
         margin-top: 10px
-        border: 1px solid #ffffff
+        border: 1px solid $white
         border-radius: 5px
         font-size: 250%
       .maps-fold:hover
@@ -366,7 +368,7 @@ footer
       line-height: 36px
       z-index: 2000
       font-size: 100%
-      background-color: #474747
+      background-color: $dark-grey
       display: block
       -webkit-border-radius: 2px
       -moz-border-radius: 2px
@@ -384,11 +386,162 @@ footer
   a:hover
     color: $blue
 
-//  Quotes
-.quote
-  background: url("../images/rigid-pricing-optimized.jpg") fixed center 70%
+// 7. Work Page Template
+.work-template-header
+  background: url(#{$work_image}) fixed center
   background-size: cover
-  border-top: solid #474747 20px
+
+.work-projects
+  background-color: #373737
+  .work-thumb
+    img
+      width: 100%
+      height: auto
+  .work-thumb-overlay
+    position: absolute
+    width: 90%
+    height: 90%
+    top: 5%
+    left: 5%
+    background-color: rgba(255, 255, 255, 0.7)
+    text-align: center
+    color: $blue
+    hr
+      width: 60%
+      border-top: 1px solid $blue
+
+// 8. Services Page Template
+.services-template-header
+  background: url(#{$work_image}) fixed center
+  background-size: cover
+
+.services-template
+  margin-top: 50px
+  margin-bottom: 50px
+  .row
+    margin-top: 50px
+  .row:first-child
+    margin-top: 0
+  i
+    font-size: 50px
+
+// 9. Pricing Page Template
+.pricing-template-header
+  background: url(#{$pricing_image}) fixed center
+  background-size: cover
+
+.pricing-template
+  color: #ffffff
+  h1
+    margin-top: 0
+    margin-bottom: 20px
+  h2
+    margin-top: 0
+    margin-bottom: 20px
+  .row
+    padding-top: 50px
+    padding-bottom: 50px
+  .bronze
+    background-color: #666666
+  .silver
+    background-color: #777777
+  .gold
+    background-color: #888888
+  .diamond
+    background-color: #999999
+  .services-list-horizontal
+    padding-top: 25px
+    padding-bottom: 25px
+    .service-list-horizontal
+      text-align: center
+    i
+      font-size: 50px
+  .exclude
+    color: #474747
+
+// 10. Contact Page Template
+.contact-template-header
+  background: url(#{$work_image}) fixed center
+  background-size: cover
+
+.contact-template
+  .form-container
+    .row
+      padding-top: 50px
+      padding-bottom: 50px
+
+.contact-template-maps
+  border-top: solid $dark-grey 20px
+
+// 11. Work Single
+.intro-work-project-single
+  background: no-repeat fixed center bottom
+  background-size: cover
+  padding-left: 0 !important
+  padding-right: 0 !important
+  border-bottom: 20px $dark-grey solid
+  min-height: 400px
+  margin-top: 50px
+  overflow: hidden
+  color: white
+
+.intro-work-project-header
+  margin-top: 50px
+  a
+    color: #ffffff
+.work-project-single
+  margin-top: -150px
+  border-bottom: 20px solid $dark-grey
+  .work-single-content-wrapper
+    img
+      width: 100%
+      height: auto
+      padding-top: 20px
+      padding-bottom: 20px
+
+.work-project-label
+  background-color: $dark-grey
+  padding-top: 50%
+
+.footer-work-projects-single
+  width: 100%
+  height: 50px
+  background-color: #373737
+  color: #ffffff
+  text-align: center
+  .not-clickable
+    color: #575757
+  a
+    color: #ffffff
+  .col-md-4
+    height: 50px
+    display: table
+    span
+      display: table-cell
+      vertical-align: middle
+  .col-md-2
+    height: 50px
+    display: table
+    span
+      display: table-cell
+      vertical-align: middle
+  .border
+    border-left: 2px solid $dark-grey
+    border-right: 2px solid $dark-grey
+
+// 12. Services Single
+
+// 13. Pricing Single
+.pricing-single
+  padding-left: 0 !important
+  padding-right: 0 !important
+  margin-top: 50px
+
+// 14. Quotes
+.quote
+  //background: url("../images/rigid-pricing-optimized.jpg") fixed center 70%
+  background-size: cover
+  border-top: solid $dark-grey 20px
   min-height: 135px
   .quote-wrapper
     font-size: 2em
@@ -425,6 +578,7 @@ footer
       position: relative
       strong
         color: $blue
+
 .time-wrapper
   height: 2px
   position: relative
@@ -441,147 +595,76 @@ footer
   position: absolute
   top: 0
 
-//  Work Projects Template
-.work-template-header
-  background: url("../images/rigid-work-optimized.jpg") fixed center
-  border-bottom: solid #474747 20px
-  margin-top: 50px
-  min-height: 400px
-  color: #ffffff
-.work-projects
-  background-color: #373737
-  .work-thumb
-    img
-      width: 100%
-      height: auto
-  .work-thumb-overlay
-    position: absolute
-    width: 90%
-    height: 90%
-    top: 5%
-    left: 5%
-    background-color: rgba(255, 255, 255, 0.7)
-    text-align: center
+// 15. Footer
+footer
+  min-height: 200px
+  color: $white
+  background-color: $dark-grey
+  p
+    font-size: 14px
+  a
+    color: $white
+  a:hover
     color: $blue
-    hr
-      width: 60%
-      border-top: 1px solid $blue
-
-//  Work Project Single
-.intro-work-project-single
-  background: no-repeat fixed center bottom
-  background-size: cover
-  padding-left: 0 !important
-  padding-right: 0 !important
-  border-bottom: 20px #474747 solid
-  min-height: 400px
-  margin-top: 50px
-  overflow: hidden
-  color: white
-.intro-work-project-header
-  margin-top: 50px
-  a
-    color: #ffffff
-.work-project-single
-  margin-top: -150px
-  border-bottom: 20px solid #474747
-  .work-single-content-wrapper
-    img
-      width: 100%
-      height: auto
-      padding-top: 20px
-      padding-bottom: 20px
-.work-project-label
-  background-color: $grey-dark
-  padding-top: 50%
-.footer-work-projects-single
-  width: 100%
-  height: 50px
-  background-color: #373737
-  color: #ffffff
-  text-align: center
-  .not-clickable
-    color: #575757
-  a
-    color: #ffffff
-  .col-md-4
-    height: 50px
-    display: table
-    span
-      display: table-cell
-      vertical-align: middle
-  .col-md-2
-    height: 50px
-    display: table
-    span
-      display: table-cell
-      vertical-align: middle
-  .border
-    border-left: 2px solid #474747
-    border-right: 2px solid #474747
-
-
-// Pricing Template
-.pricing-template-header
-  background: url("../images/rigid-pricing-optimized.jpg") fixed center
-  background-size: cover
-  margin-top: 50px
-  border-bottom: solid #474747 20px
-  color: #ffffff
-  padding-top: 50px
-  padding-bottom: 50px
-  h1
-    text-align: center
-  .intro-pricing
-    margin-top: 20px
-.pricing-template
-  color: #ffffff
-  h1
-    margin-top: 0
-    margin-bottom: 20px
-  h2
-    margin-top: 0
-    margin-bottom: 20px
-  .row
-    padding-top: 50px
-    padding-bottom: 50px
-  .bronze
-    background-color: #666666
-  .silver
-    background-color: #777777
-  .gold
-    background-color: #888888
-  .diamond
-    background-color: #999999
-  .services-list-horizontal
-    padding-top: 25px
-    padding-bottom: 25px
-    .service-list-horizontal
-      text-align: center
-    i
-      font-size: 50px
-  .exclude
-    color: #474747
-
-// Pricing Single
-.pricing-single
-  padding-left: 0 !important
-  padding-right: 0 !important
-  margin-top: 50px
-
-// Services Template
-.services-template
-  margin-top: 50px
-  margin-bottom: 50px
+    text-decoration: none
   .row
     margin-top: 50px
-  i
-    font-size: 50px
+  ul
+    list-style-type: none
+  .middle
+    float: left
+    margin-top: 30px
+  .contacts
+    margin-left: 40px
+    i:before
+      margin-left: 0
+  .social
+    font-size: 2em
+    margin-right: 40px
+    li
+      float: right
 
-// Service Single
+// 16. 404.php
+.custom-404-header
+  margin-top: 50px
+  min-height: 200px
+  border-bottom: solid $dark-grey 20px
+  background: url(#{$pricing_image}) fixed center
+  color: $white
+  .container
+    height: 180px
+    display: table
+  .custom-404-header-title
+    display: table-cell
+    vertical-align: middle
+.error-404
+  padding-top: 50px
+  padding-bottom: 50px
 
+// 17. Miscellaneous
+*
+  -webkit-padding-start: 0px
+  font-family: 'Roboto', sans-serif
+body
+  overflow-x: hidden
+.no-padding
+  padding: 0 !important
+.padding-left
+  padding-left: 5px
+.padding-right
+  padding-right: 5px
+.no-margin
+  margin: 0 !important
+.smaller
+  font-size: 65%
+.left
+  float: left
+  margin-top: 30px
+.right
+  float: right
+  margin-top: 30px
 
-//  Media Responsive
+// 18. Media Responsive max 768px
 @media screen and (max-width: 768px)
   .work
     position: relative
@@ -614,7 +697,7 @@ footer
   .overlay-maps
     height: 501px
 
-
+// 19. Media Responsive min 768px
 @media screen and (min-width: 768px)
   .work
     position: relative
@@ -645,12 +728,14 @@ footer
   .overlay-maps
     height: 501px
 
+// 20. Media Responsive max 860px
 @media screen and (max-width: 860px)
   .span-wrapper
     font-size: 1.8em !important
   .quote-wrapper
     font-size: 1.8em !important
 
+// 21. Media Responsive min 992px
 @media screen and (min-width: 992px)
   .work
     margin-top: 0
@@ -669,20 +754,19 @@ footer
       width: 100%
       margin: 0
 
-
+// 22. Media Responsive max 992px
 @media screen and (max-width: 992px)
   .form-contact
     width: 100%
 
+// 23. Media Responsive min 1200px
 @media screen and (min-width: 1200px)
   .work .col-md-3 img
     width: 100%
   .span-wrapper
     font-size: 3em !important
 
-
-
-// BOOTSTRAP 7 EQUAL COLLS
+// 24. Bootstrap 7 Equal Colls
 @media (min-width: 768px)
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,
