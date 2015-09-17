@@ -37,8 +37,9 @@ get_header(); ?>
             <div class="container">
                 <div class="col-md-8 col-md-offset-2">
                     <h1><?php the_title(); ?></h1>
-
-                    <?php the_content(); ?>
+                    <p>
+                        <?php echo get_post_meta($post->ID, '_pricing_description', true); ?>
+                    </p>
                 </div>
 
                 <div class="col-md-8 col-md-offset-2">

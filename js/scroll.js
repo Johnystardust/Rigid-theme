@@ -3,16 +3,16 @@ jQuery(document).ready(function(){
 
     $(window).load(function () {
         if($(window).scrollTop() > 100){
-            $('.go-up').fadeIn();
+            $('.go-up').stop().fadeIn();
         }
     });
 
     // Scroll to top fadeIn/fadeOut
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
-            $('.go-up').fadeIn();
+            $('.go-up').stop().fadeIn();
         } else {
-            $('.go-up').fadeOut();
+            $('.go-up').stop().fadeOut();
         }
     });
 

@@ -38,6 +38,7 @@ function tvds_init_pricing_post_type(){
  * META BOXES
  */
 function tvds_pricing_meta_box_cb(){
+    add_meta_box('pricing_description', 'Small Description', 'tvds_pricing_description_meta_cb', 'prijzen', 'normal', 'default');
     add_meta_box('pricing_services', 'Services', 'tvds_pricing_services_meta_cb', 'prijzen', 'normal', 'default');
     add_meta_box('pricing_price', 'Price', 'tvds_pricing_price_meta_cb', 'prijzen', 'normal', 'default');
 }
@@ -46,11 +47,30 @@ function tvds_pricing_meta_box_cb(){
  * META BOXES CALLBACK
  *
  * Here are the callbacks for the meta boxes
- * 1. Pricing Services
- * 2. Pricing Price
+ * 1. Small Description
+ * 2. Pricing Services
+ * 3. Pricing Price
  */
 
-// 1. Pricing Services
+// 1. Small Description
+function tvds_pricing_description_meta_cb(){
+    global $post;
+    ?>
+
+    <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table" >
+        <tbody>
+        <tr class="form-field">
+            <td>
+                <textarea name="_pricing_description" id="description" rows="5" placeholder="write a small description" style="resize: vertical; width: 100%"><?php echo get_post_meta($post->ID, '_pricing_description', true); ?></textarea>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <?php
+}
+
+// 2. Pricing Services
 function tvds_pricing_services_meta_cb(){
     global $post;
 
@@ -99,7 +119,7 @@ function tvds_pricing_services_meta_cb(){
     <?php
 }
 
-//2. Pricing Price
+// 3. Pricing Price
 function tvds_pricing_price_meta_cb(){
     global $post;
     ?>
@@ -133,6 +153,9 @@ function tvds_save_pricing_meta($post_id){
         return;
     }
     // Checks for input and sanitizes/saves if needed
+    if(isset($_POST[ '_pricing_description' ])){
+        update_post_meta($post_id, '_pricing_description', $_POST['_pricing_description']);
+    }
     if(isset($_POST[ '_pricing_check' ])){
         update_post_meta($post_id, '_pricing_check', $_POST['_pricing_check']);
     }

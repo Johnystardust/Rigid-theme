@@ -55,6 +55,8 @@ $checked = get_post_meta($post->ID, '_pricing_check', true);
         </div>
     </div>
 
-<?php endwhile;
-get_footer();
-?>
+<?php endwhile; ?>
+
+<?php get_template_part( 'partials/quote' ); ?>
+
+<?php get_footer(); ?>
