@@ -3,7 +3,7 @@
         <h1 class="text-center">Recent Werk</h1>
         <br>
         <p class="text-center">
-            Neem een kijkje in tussen de gemaakte websites en zie de mogelijkheden, heeft u vragen of opmerkingen dan hoor ik deze graag van u.
+            Dit is een overzicht van de projecten die wij gemaakt hebben. Neem gerust een kijkje en zie welke mogelijkheden er zijn.
         </p>
         <br>
 

@@ -164,11 +164,9 @@ header
 
 // 4.2 Page Header
 .custom-page-header
-  min-height: 300px
   border-bottom: solid $dark-grey 20px
   color: $white
-  .template-header-title
-    margin-top: 25px
+  padding: 25px
   .template-header-description
     margin-top: 20px
 
@@ -538,9 +536,22 @@ header
 // 12. Services Single
 
 // 13. Pricing Single
+.pricing-header-single
+  background: url(#{$work_image}) fixed center
+  background-size: cover
 .pricing-single
   padding-left: 0 !important
   padding-right: 0 !important
+  .services-list-horizontal
+    padding-top: 25px
+    .service-list-horizontal
+      text-align: center
+    i
+      font-size: 50px
+  .exclude
+    color: #999999
+  .price-amount
+    padding-bottom: 25px
 
 // 14. Quotes
 .quote
@@ -631,7 +642,6 @@ footer
 
 // 16. 404.php
 .custom-404-header
-  margin-top: 50px
   min-height: 200px
   border-bottom: solid $dark-grey 20px
   background: url(#{$pricing_image}) fixed center

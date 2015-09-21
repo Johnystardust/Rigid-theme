@@ -105,11 +105,9 @@ header {
         color: #337ab7; }
 
 .custom-page-header {
-  min-height: 300px;
   border-bottom: solid #474747 20px;
-  color: #ffffff; }
-  .custom-page-header .template-header-title {
-    margin-top: 25px; }
+  color: #ffffff;
+  padding: 25px; }
   .custom-page-header .template-header-description {
     margin-top: 20px; }
 
@@ -460,9 +458,23 @@ header {
     border-left: 2px solid #474747;
     border-right: 2px solid #474747; }
 
+.pricing-header-single {
+  background: url(../images/rigid-work-optimized.jpg) fixed center;
+  background-size: cover; }
+
 .pricing-single {
   padding-left: 0 !important;
   padding-right: 0 !important; }
+  .pricing-single .services-list-horizontal {
+    padding-top: 25px; }
+    .pricing-single .services-list-horizontal .service-list-horizontal {
+      text-align: center; }
+    .pricing-single .services-list-horizontal i {
+      font-size: 50px; }
+  .pricing-single .exclude {
+    color: #999999; }
+  .pricing-single .price-amount {
+    padding-bottom: 25px; }
 
 .quote {
   background-size: cover;
@@ -551,7 +563,6 @@ footer {
       float: right; }
 
 .custom-404-header {
-  margin-top: 50px;
   min-height: 200px;
   border-bottom: solid #474747 20px;
   background: url(../images/rigid-pricing-optimized.jpg) fixed center;

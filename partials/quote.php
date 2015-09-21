@@ -72,6 +72,9 @@
     if( is_page( 'Contact' ) ){
         $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-work-optimized.jpg') fixed center 90%";
     }
+    if ( 'prijzen' == get_post_type() ) {
+        $background_image = "url('/wp-content/themes/rigid-webdesign/images/rigid-work-optimized.jpg') fixed center 90%";
+    }
     if( is_404() ){
         $background_image = "url('../wp-content/themes/rigid-webdesign/images/rigid-pricing-optimized.jpg') fixed center 70%";
     }

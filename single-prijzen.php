@@ -17,15 +17,22 @@ $checked = get_post_meta($post->ID, '_pricing_check', true);
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-    <div class="container-fluid pricing-single">
-        <div class="row">
-            <div class="container">
+    <div class="container-fluid custom-page-header pricing-header-single">
+        <div class="container">
+            <div class="row text-center template-header-title">
+                <h1><?php the_title(); ?></h1>
+            </div>
+            <div class="row template-header-description">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1><?php the_title(); ?></h1>
-
-                    <?php the_content(); ?>
+                    <p><?php echo get_post_meta($post->ID, '_pricing_description', true); ?></p>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container-fluid pricing-single">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="services-list-horizontal row seven-cols no-margin">
                         <h2>Inhoud</h2>
@@ -46,10 +53,13 @@ $checked = get_post_meta($post->ID, '_pricing_check', true);
                 </div>
 
                 <div class="col-md-8 col-md-offset-2">
+                    <?php the_content(); ?>
+                </div>
+
+                <div class="col-md-8 col-md-offset-2">
                     <div class="price-amount">
                         <h2>Prijs € <?php echo get_post_meta($post->ID, '_pricing_price', true); ?></h2>
                     </div>
-                    <a href="<?php echo the_permalink(); ?>" class="btn btn-primary buy">Bekijk details</a>
                 </div>
             </div>
         </div>

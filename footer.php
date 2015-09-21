@@ -6,7 +6,7 @@
                     <li><p><?php echo $display_option['name'] ?></p></li>
                     <li><p><?php echo $display_option['address'] ?></p></li>
                     <li><p><?php echo $display_option['postal'] ?></p></li>
-                    <li><a><i class="icon-post"></i><?php echo $display_option['email'] ?></a></li>
+                    <li><a href="<?php echo get_page_link(11); ?>"><i class="icon-post"></i><?php echo $display_option['email'] ?></a></li>
                 </ul>
             </div>
             <div class="middle">
